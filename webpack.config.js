@@ -6,25 +6,32 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const baseConfig = {
     entry: path.resolve(__dirname, './src/index.js'),
     mode: 'development',
+    devtool: 'inline-source-map',
     module: {
-        rules: [
-            {
-                test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
-            },
-        ],
+        rules: [{
+            test: /\.css$/i,
+            use: ['style-loader', 'css-loader'],
+        }, {
+            test: /\.tsx?$/,
+            use: 'ts-loader',
+            exclude: /node_modules/,  
+        }],
+    },
+    optimization: {
+        minimize: false,
     },
     resolve: {
-        extensions: ['.js'],
+        extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
         filename: 'index.js',
-        path: path.resolve(__dirname, '../dist'),
+        path: path.resolve(__dirname, './dist'),
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './src/index.html'),
             filename: 'index.html',
+            minify: false,
         }),
         new CleanWebpackPlugin(),
     ],
