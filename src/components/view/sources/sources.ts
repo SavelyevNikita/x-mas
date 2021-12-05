@@ -1,11 +1,11 @@
 import './sources.css';
 
-interface interSource {
+export interface interSource {
   id: string,
   name: string
 }
 
-class Sources {
+export class Sources {
   draw(data: interSource[]): void {
     const fragment = document.createDocumentFragment() as DocumentFragment;
     const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
@@ -23,4 +23,4 @@ class Sources {
   }
 }
 
-export default Sources;
+//  default Sources;
