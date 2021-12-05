@@ -1,11 +1,15 @@
-import './sources.css';
+// import './sources.css';
 
 class Sources {
     draw(data) {
+        // console.log(data);
         const fragment = document.createDocumentFragment();
         const sourceItemTemp = document.querySelector('#sourceItemTemp');
+        // console.log(sourceItemTemp);
+        // console.log(typeof sourceItemTemp);
 
         data.forEach((item) => {
+            // console.log(item);
             const sourceClone = sourceItemTemp.content.cloneNode(true);
 
             sourceClone.querySelector('.source__item-name').textContent = item.name;
@@ -18,4 +22,4 @@ class Sources {
     }
 }
 
-export default Sources;
+// export default Sources;
