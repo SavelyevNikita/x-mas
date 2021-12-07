@@ -22,4 +22,4 @@ export class AppView {
     }
 }
 
-export default AppView;
+// export default AppView;
