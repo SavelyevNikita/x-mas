@@ -3,13 +3,13 @@ import { Sources, interSource } from './sources/sources';
 
 
 export interface interDataNews {
-    status: string;
-    totalResults: number;
-    articles: interNews[];
+    status?: string;
+    totalResults?: number;
+    articles?: interNews[];
 }
 export interface interDataSource {
-    status:string;
-    sources: interSource[];
+    status?:string;
+    sources?: interSource[];
 }
 
 export class AppView {
@@ -21,14 +21,14 @@ export class AppView {
         this.sources = new Sources();
     }
 
-    drawNews(data: interDataNews) {
+    drawNews(data?: interDataNews): void {
         // console.log(data);
         const values = data?.articles ? data?.articles : [];
         // console.log(values, typeof values)
         this.news.draw(values);
     }
 
-    drawSources(data: interDataSource) {
+    drawSources(data?: interDataSource) {
         // console.log(data);
         const values= data?.sources ? data?.sources : [];
         // console.log(values, typeof values)

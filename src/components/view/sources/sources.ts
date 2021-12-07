@@ -11,7 +11,7 @@ export interface interSource {
 }
 
 export class Sources {
-  draw(data: interSource[]): void {
+  draw(data: interSource[]){
     // console.log(data);
     const fragment = document.createDocumentFragment() as DocumentFragment;
     const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;

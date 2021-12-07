@@ -7,10 +7,13 @@ class Loader {
     getResp(
         { endpoint, options = {} },
         callback = () => {
-            // console.log(endpoint, options);
             console.error('No callback for GET response');
         }
     ) {
+        // console.log(endpoint, typeof endpoint);
+        // console.log(options, typeof options);
+        // console.log(callback, typeof options);
+        // console.log('========================');
         this.load('GET', endpoint, callback, options);
     }
 
@@ -62,6 +65,7 @@ class Loader {
 
         Object.keys(urlOptions).forEach((key) => {
             url += `${key}=${urlOptions[key]}&`;
+            // url += `${key}=${urlOptions[key as keyof typeof urlOptions]}&`;
         });
 
         return url.slice(0, -1);

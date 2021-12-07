@@ -12,7 +12,7 @@ export interface interNews {
     urlToImage: string;
 }
 export class News {
-    draw(data: interNews[]): void {
+    draw(data: interNews[]){
         // console.log(data);
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
 

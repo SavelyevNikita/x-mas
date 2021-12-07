@@ -1,7 +1,9 @@
 import AppLoader from './appLoader';
 
 class AppController extends AppLoader {
-    getSources(callback) {
+    getSources(callback: <interDataSource>(data?: interDataSource) => void) {
+        // console.log(callback);
+        // console.log(typeof callback);
         super.getResp(
             {
                 endpoint: 'sources',
@@ -10,15 +12,15 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e, callback) {
-        let target = e.target;
+    getNews(e: Event, callback: <interDataNews>(data?: interDataNews) => void) {
+        let target = e.target as HTMLElement;
         const newsContainer = e.currentTarget;
 
         while (target !== newsContainer) {
             if (target.classList.contains('source__item')) {
                 const sourceId = target.getAttribute('data-source-id');
-                if (newsContainer.getAttribute('data-source') !== sourceId) {
-                    newsContainer.setAttribute('data-source', sourceId);
+                if ((<HTMLElement>newsContainer).getAttribute('data-source') !== sourceId) {
+                    (<HTMLElement>newsContainer).setAttribute('data-source', sourceId!); //////////////not sure
                     super.getResp(
                         {
                             endpoint: 'everything',
@@ -31,7 +33,7 @@ class AppController extends AppLoader {
                 }
                 return;
             }
-            target = target.parentNode;
+            target = target.parentNode as HTMLElement;
         }
     }
 }
