@@ -1,8 +1,13 @@
 import './sources.css';
 
 export interface interSource {
+  category: string;
+  country: string;
+  description: string;
   id: string;
+  language: string;
   name: string;
+  url: string;
 }
 
 export class Sources {
@@ -12,6 +17,7 @@ export class Sources {
     const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
 
     data.forEach((item: interSource) => {
+      // console.log(item);
       const sourceClone = sourceItemTemp.content.cloneNode(true) as HTMLElement;
 
       (<HTMLElement>sourceClone.querySelector('.source__item-name')).textContent = item.name;
@@ -24,4 +30,12 @@ export class Sources {
   }
 }
 
+
+// category: "general"
+// country: "us"
+// description: "Your trusted source for breaking news, analysis, exclusive interviews, headlines, and videos at ABCNews.com."
+// id: "abc-news"
+// language: "en"
+// name: "ABC News"
+// url: "https://abcnews.go.com"
 //  default Sources;
