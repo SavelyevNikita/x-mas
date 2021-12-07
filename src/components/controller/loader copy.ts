@@ -1,48 +1,60 @@
-export class Loader {
+// interface interResponse{
+//     body:ReadableStream;
+//     bodyUsed:boolean;
+//     headers:object;
+//     ok:boolean;
+//     redirected:boolean;
+//     status:number;
+//     statusText:string;
+//     type:string;
+//     url:string;
+// }
 
-    baseLink: string;
-    options: { [key: string]: string };
+// export class Loader {
 
-    constructor(baseLink: string, options: { [key: string]: string }) {
-        this.baseLink = baseLink;
-        this.options = options;
-    }
+//     baseLink?: string;
+//     options?: { [key: string]: string };
 
-        getResp(
-            { endpoint, options = {} },
-            callback = ():void => {
-                console.error('No callback for GET response');
-            }
-        ) {
-            this.load('GET', endpoint, callback, options);
-        }
+//     constructor(baseLink?: string, options?: { [key: string]: string }) {
+//         this.baseLink = baseLink;
+//         this.options = options;
+//     }
 
-        errorHandler(res:) {
-            if (!res.ok) {
-                if (res.status === 401 || res.status === 404)
-                    console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
-                throw Error(res.statusText);
-            }
+//         getResp(
+//             { endpoint, options = {} },
+//             callback = ():void => {
+//                 console.error('No callback for GET response');
+//             }
+//         ): void {
+//             this.load('GET', endpoint, callback, options);
+//         }
 
-            return res;
-        }
+//         errorHandler(res:interResponse) {
+//             if (!res.ok) {
+//                 if (res.status === 401 || res.status === 404)
+//                     console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
+//                 throw Error(res.statusText);
+//             }
 
-        makeUrl(options:object, endpoint:string) {
-            const urlOptions = { ...this.options, ...options };
-            let url = `${this.baseLink}${endpoint}?`;
+//             return res;
+//         }
 
-            Object.keys(urlOptions).forEach((key) => {
-                url += `${key}=${urlOptions[key]}&`;
-            });
+//         makeUrl(options:object, endpoint:string): string {
+//             const urlOptions = { ...this.options, ...options };
+//             let url = `${this.baseLink}${endpoint}?`;
 
-            return url.slice(0, -1);
-        }
+//             Object.keys(urlOptions).forEach((key) => {
+//                 url += `${key}=${urlOptions[key]}&`;
+//             });
 
-        load(method, endpoint, callback, options = {}) {
-            fetch(this.makeUrl(options, endpoint), { method })
-                .then(this.errorHandler)
-                .then((res) => res.json())
-                .then((data) => callback(data))
-                .catch((err) => console.error(err));
-        }
-}
+//             return url.slice(0, -1);
+//         }
+
+//         load(method:string, endpoint:string, callback:Function, options = {}) {
+//             fetch(this.makeUrl(options, endpoint), { method })
+//                 .then(this.errorHandler)
+//                 .then((res) => res.json())
+//                 .then((data) => callback(data))
+//                 .catch((err) => console.error(err));
+//         }
+// }
