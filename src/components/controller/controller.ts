@@ -25,7 +25,7 @@ class AppController extends AppLoader {
                         {
                             endpoint: 'everything',
                             options: {
-                                sources: sourceId,
+                                sources: sourceId!,
                             },
                         },
                         callback
