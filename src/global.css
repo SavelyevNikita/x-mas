@@ -19,24 +19,20 @@ footer {
     align-items: center;
     justify-content: space-between;
 }
-/* footer .copyright {
-    font-size: 14px;
-    color: #333;
-    text-align: center;
+.rss-logo{
+    background: url('./components/ico/rs_school.svg');
+    width: 61px;
+    height: 23px;
 }
-footer .copyright a {
-    color: #444;
-}
-footer .copyright a:hover {
-    color: #555;
-}
-footer .copyright:before {
-    content: '©';
-} */
+
 @media only screen and (max-width: 767px){
-    header {
+      header {        
+        background: #17181c;
+        position: sticky;
+        top: 0;
+        z-index: 100;
         padding: 5px;
-            }
+    }
 
     header h1 {
         text-align: center;
