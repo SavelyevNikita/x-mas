@@ -45,5 +45,3 @@ export class News {
         (<HTMLElement>document.querySelector('.news')).appendChild(fragment);
     }
 }
-
-// export default News;

@@ -1,30 +1,7 @@
-// export interface interResponse {
-//     body: ReadableStream;
-//     bodyUsed: boolean;
-//     headers: object;
-//     ok: boolean;
-//     redirected: boolean;
-//     status: number;
-//     statusText: string;
-//     type: string;
-//     url: string;
-// }
-// оказывается есть базовый интерфейс Response
-// type typeCallback = <T>(data: T) => void;
-// interface IOptions {
-//     [key: string ]: string;
-//   } 
-//   interface IArgResp {
-//     string, [key: string]: IOptions
-//   } 
-
-
 export class Loader {
 
     baseLink?: string;
     options?: { [key: string]: string };
-    //      {sources: 'aftenposten'}
-    //        sources: "aftenposten"
 
     constructor(baseLink?: string, options?: { [key: string]: string }) {
         this.baseLink = baseLink;
@@ -32,7 +9,6 @@ export class Loader {
     }
 
     getResp(
-        // { endpoint, options = {} }: { endpoint: string, options: { [key: string]: string } },
         { endpoint, options }: { endpoint: string; options?: { [key: string]: string } },
         callback = () => {
             console.error('No callback for GET response');
@@ -51,8 +27,7 @@ export class Loader {
         return res;
     }
 
-    // makeUrl({ endpoint, options = {} }: { endpoint: string, options: { [key: string]: string } }): string {
-    makeUrl(options:any, endpoint:any) {
+    makeUrl(options: { [key: string]: string }, endpoint: string) {
         const urlOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 

@@ -2,8 +2,6 @@ import AppLoader from './appLoader';
 
 class AppController extends AppLoader {
     getSources(callback: <interDataSource>(data?: interDataSource) => void) {
-        // console.log(callback);
-        // console.log(typeof callback);
         super.getResp(
             {
                 endpoint: 'sources',
