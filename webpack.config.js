@@ -11,11 +11,22 @@ const baseConfig = {
         rules: [{
             test: /\.css$/i,
             use: ['style-loader', 'css-loader'],
-        }, {
+        }, 
+        {
             test: /\.(ts|tsx)?$/,
             use: 'ts-loader',
             exclude: /node_modules/,
-        }],
+        },
+        {
+            test: /\.svg/,
+            use: {
+              loader: "svg-url-loader",
+              options: {
+                // make all svg images to work in IE
+                encoding: "base64",
+              },
+            },
+          }],
     },
     optimization: {
         minimize: false,
@@ -33,7 +44,7 @@ const baseConfig = {
             filename: 'index.html',
             minify: false,
         }),
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin()
     ],
 };
 
