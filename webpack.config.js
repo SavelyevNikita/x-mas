@@ -2,6 +2,7 @@ const path = require('path');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 const baseConfig = {
     entry: path.resolve(__dirname, './src/index.ts'),
@@ -20,35 +21,30 @@ const baseConfig = {
                   "sass-loader",
                 ],
               },
-        //     {
-        //     test: /\.css$/i,
-        //     use: ['style-loader', 'css-loader'],
-        // }, 
-        {
-            test: /\.(ts|tsx)?$/,
-            use: 'ts-loader',
-            exclude: /node_modules/,
-        },
-        {
-            test: /\.svg/,
-            use: {
-              loader: "svg-url-loader",
-              options: {
-                // make all svg images to work in IE
-                encoding: "base64",
-              },
+            {
+                test: /\.(ts|tsx)?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
             },
-          }],
+            {
+                test: /\.(ico|gif|jpg|png|jpeg|svg)?$/,
+                // type: 'asset/resource'
+                use: 'file-loader',
+                type: 'asset/inline',
+            },
+        ],
     },
     optimization: {
         minimize: false,
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: ['.ts', '.js'],
     },
     output: {
         filename: 'index.js',
         path: path.resolve(__dirname, './dist'),
+        assetModuleFilename: 'asset/name/[ext]',
+        // assetModuleFilename: 'images/[hash][ext][query]',
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -56,8 +52,14 @@ const baseConfig = {
             filename: 'index.html',
             minify: false,
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new CopyPlugin({
+            patterns: [
+              { from: "./assets"},
+            ],
+        }),
     ],
+    
 };
 
 module.exports = ({ mode }) => {
