@@ -5,6 +5,28 @@ body {
     background: #192F2D;
 }
 
+%text-shared {
+    width: 106px;
+    height: 22px;
+    font-family: Neucha;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+%secondary-text-shared {
+    font-family: Steppe;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
 main {
     margin: 0 auto;
     width: 1920px;
@@ -41,16 +63,8 @@ main {
                 margin-top: 50px;
                 display: flex;
                 justify-content: space-between;
-                .sort-static{
-                    width: 106px;
-                    height: 22px;
-                    font-family: Neucha;
-                    font-style: normal;
-                    font-weight: normal;
-                    font-size: 20px;
-                    line-height: 22px;
-                    text-transform: uppercase;
-                    color: #FFFFFF;
+                .sort-static {
+                    @extend %text-shared;
                 }
                 .sort-set{
                     width: 178px;
@@ -60,6 +74,83 @@ main {
                     border-radius: 30px;
                     border: solid #24C5DB 1px;
                 }
+            }
+            .category-wrap{
+                margin-top: 50px;
+                // display: flex;
+                // justify-content: space-between;
+                .category-static {
+                    @extend %text-shared;
+                }
+                .category-set{
+                    .static{
+                        @extend %text-shared;
+                    }
+                }
+            }
+            .form-wrap{
+                .form-static{
+                    @extend %text-shared;
+                }
+
+                .form-set{
+                    display: flex;
+                    justify-content: space-between;
+                    .bell-static, 
+                    .ball-static, 
+                    .cone-static, 
+                    .star-static, 
+                    .snow-static, 
+                    .figurine-static{
+                        @extend %secondary-text-shared;
+                        margin-top: 16px;
+                    }
+                    .bell{
+                        background: url("./assets/svg/bell-2.svg") 0 0/contain no-repeat;
+                        width: 42px;
+                        height: 42px;
+                    }
+                    .ball{
+                        background: url("./assets/svg/ball.svg") 0 0/contain no-repeat;
+                        width: 42px;
+                        height: 42px;
+                    }
+                    .cone{
+                        background: url("./assets/svg/cone.svg") 0 0/contain no-repeat;
+                        width: 42px;
+                        height: 42px;
+                    }
+                    .star{
+                        background: url("./assets/svg/star.svg") 0 0/contain no-repeat;
+                        width: 42px;
+                        height: 42px;
+                    }
+                    .snow{
+                        background: url("./assets/svg/snow.svg") 0 0/contain no-repeat;
+                        width: 42px;
+                        height: 42px;
+                    }
+                    .figurine{
+                        background: url("./assets/svg/toy.svg") 0 0/contain no-repeat;
+                        width: 42px;
+                        height: 42px;
+                    }
+                    .bell-static, 
+                    .ball-static, 
+                    .cone-static, 
+                    .star-static, 
+                    .snow-static, 
+                    .figurine-static{
+                        @extend %secondary-text-shared;
+                    }
+                }
+            }
+            .set0f-static,
+            .year-static,
+            .color-static,
+            .size-static{
+                @extend %text-shared;
+                margin-top: 16px; 
             }
         }
     }
