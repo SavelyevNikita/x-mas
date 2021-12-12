@@ -26,6 +26,15 @@ body {
     text-align: center;
     color: #FFFFFF;
 }
+%text-large-middle-little{
+    font-family: Steppe;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+}
 
 main {
     margin: 0 auto;
@@ -33,9 +42,12 @@ main {
     border: $col 1px solid;
     .collection-settings {
         .wrapper {
-            width: 450px;
+            max-width: 450px;
             height: 900px;
             border: $col 1px solid;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             .effects-and-seach {
                 display: flex;
                 justify-content: space-between;
@@ -60,25 +72,25 @@ main {
                 }
             }
             .sort-wrap{
-                margin-top: 50px;
                 display: flex;
                 justify-content: space-between;
                 .sort-static {
                     @extend %text-shared;
                 }
                 .sort-set{
-                    width: 178px;
+                    // margin: 0 auto;   
+                    width: 100%;
                     height: 30px;
-                    background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(36, 197, 219, 0.15) 0%, rgba(36, 197, 219, 0) 100%);
+                    background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(255, 255, 255, 0.2) 0%, rgba(157, 243, 255, 0.2) 100%);
                     backdrop-filter: blur(31px);
                     border-radius: 30px;
                     border: solid #24C5DB 1px;
+                    .sort-set_select{
+                        margin: 0 auto;
+                    }
                 }
             }
             .category-wrap{
-                margin-top: 50px;
-                // display: flex;
-                // justify-content: space-between;
                 .category-static {
                     @extend %text-shared;
                 }
@@ -103,7 +115,7 @@ main {
                     .snow-static, 
                     .figurine-static{
                         @extend %secondary-text-shared;
-                        margin-top: 16px;
+                        // margin-top: 16px;
                     }
                     .bell{
                         background: url("./assets/svg/bell-2.svg") 0 0/contain no-repeat;
@@ -145,12 +157,101 @@ main {
                     }
                 }
             }
-            .set0f-static,
-            .year-static,
-            .color-static,
-            .size-static{
-                @extend %text-shared;
-                margin-top: 16px; 
+            .color-wrap{    
+                // display: flex;
+                // justify-content: space-between;
+                .color-static{
+                    @extend %text-shared;
+                }           
+                .color-set{
+                    width: 225px;
+                    height: 24px;
+                    display: flex;
+                    justify-content: space-between;           
+                    .white{
+                        background: url("./assets/svg/white-sqr.svg");
+                        width: 24px;
+                        height: 24px;
+                    }
+                    .yellow{
+                        background: url("./assets/svg/yellow-sqr.svg");
+                        width: 24px;
+                        height: 24px;
+                    }
+                    .red{
+                        background: url("./assets/svg/red-sqr.svg");
+                        width: 24px;
+                        height: 24px;
+                    }
+                    .blue{
+                        background: url("./assets/svg/blue-sqr.svg");
+                        width: 24px;
+                        height: 24px;
+                    }
+                    .green{
+                        background: url("./assets/svg/green-sqr.svg");
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+            .year-wrap{
+                .year-static{
+                    @extend %text-shared;
+                    width: 100%;
+                    height: 22px;
+                }
+            }
+            .set0f-wrap{
+                .set0f-static{
+                    @extend %text-shared;
+                    width: 100%;
+                    height: 22px;    
+                }
+            }
+            .size-wrap{
+                .size-static{
+                    @extend %text-shared;
+                    width: 100%;
+                    height: 22px;   
+                }
+                .size-set{
+                    .large-set__square{
+                        background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(255, 255, 255, 0.2) 0%, rgba(157, 243, 255, 0.2) 100%);
+                        backdrop-filter: blur(31px);
+                        border-radius: 5px;
+                    }
+                    .large-set__static, .middle-set__static, .little-set__static{
+                        @extend %text-large-middle-little
+                    }
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+            .reset-wrap{
+                display: flex;
+                justify-content: space-between;
+                .reset-filters, .reset-settings{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 178px;
+                    height: 28px;
+                    background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(255, 255, 255, 0.2) 0%, rgba(157, 243, 255, 0.2) 100%);
+                    backdrop-filter: blur(31px);
+                    border-radius: 30px;
+                    border: solid #24C5DB 1px;
+                    .reset-filters__reset-static, .reset-settings__reset-static{
+                        font-family: Steppe;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 12px;
+                        line-height: 14px;
+                        text-align: center;
+                        color: #FFFFFF;
+
+                    }
+                }
             }
         }
     }

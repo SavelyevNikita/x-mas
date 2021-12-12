@@ -21,7 +21,14 @@
                        <p class="sort-static">
                            Сортировать
                        </p>
-                       <div class="sort-set"></div>
+                       <div class="sort-set">
+                           <select name="sort-set_select" id="">
+                               <option value="A_Z">По названию от "А" до "Я"</option>
+                               <option value="Z-A">По названию от "Я" до "А"</option>
+                               <option value="">По количеству в порядке возрастания</option>
+                               <option value="">По количеству в порядке убывания</option>
+                           </select>
+                       </div>
                     </div> 
                     <div class="category-wrap">
                         <p class="category-static">
@@ -84,7 +91,7 @@
                     </div>
                     <div class="year-wrap">
                         <p class="year-static">
-                            Количество экземляров
+                            Год приобретения
                         </p>
                         <div class="year-set"></div>
                     </div> 
@@ -92,7 +99,44 @@
                         <p class="color-static">
                             Цвет
                         </p>
-                        <div class="color-set"></div>
+                        <div class="color-set">
+                            <div class="white"></div>
+                            <div class="yellow"></div>
+                            <div class="red"></div>
+                            <div class="blue"></div>
+                            <div class="green"></div>
+                        </div>
+                    </div>
+                    <div class="size-wrap">
+                        <p class="size-static">
+                            Размер
+                        </p>
+                        <div class="size-set">
+                            <div class="large-set">
+                                <input type="checkbox" name="large-set_square" class="large-set__square"></input>
+                                <label for="large-set_square" class="large-set__static">Большой</label>
+                            </div>
+                            <div class="middle-set">
+                                <input type="checkbox" name="middle-set_square" class="middle-set__square"></input>
+                                <label for="middle_set-square" class="middle-set__static">Средний</label>
+                            </div>
+                            <div class="little-set">
+                                <input type="checkbox" name="little-set_square" class="little-set__square"></input>
+                                <label for="little-set_square" class="little-set__static">Маленький</label>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="favorite-wrap">
+                        <input type="checkbox" name="favorite_square" class="favorite-square"></input>
+                        <label for="favorite_square" class="favorite-static">Только любимые</label>
+                    </div>
+                    <div class="reset-wrap">
+                        <div class="reset-filters">
+                            <p class="reset-filters__reset-static">Сбросить фильтры</p>
+                        </div>
+                        <div class="reset-settings">
+                            <p class="reset-settings__reset-static">Сбросить настройки</p>
+                        </div>
                     </div> 
                 </div>
             </section>
