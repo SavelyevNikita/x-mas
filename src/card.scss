@@ -1,4 +1,5 @@
-.toyCard{
+.toyCard {
+    margin: 25px;
     padding: 10px;
     width: 222px;
     height: 342px;
@@ -9,36 +10,39 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    .nameToy{
-        .nameToy__name{
-            font-family: Neucha;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 18px;
-            line-height: 20px;
-            display: flex;
-            align-items: center;
-            color: #FFFFFF;
-        }
-        .nameToy__pic{
-            width: 100px;
-            height: 100px;
-        }
+}
 
-    }
-    .countToy__count-static, 
-    .yearToy__year-static, 
-    .shapeToy__shape-static,
-    .colorToy__color-static, 
-    .sizeToy__size-static, 
-    .favoriteToy__favorite-static{
-        font-family: Steppe;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 10px;
-        line-height: 12px;
-        display: flex;
-        align-items: center;
-        color: #FFFFFF;
-    }
+// .nameToy{
+.nameToy__name {
+    font-family: Neucha;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.nameToy__pic {
+    margin: 20px auto 10px;
+    // margin: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.countToy__count-static,
+.yearToy__year-static,
+.shapeToy__shape-static,
+.colorToy__color-static,
+.sizeToy__size-static,
+.favoriteToy__favorite-static {
+    font-family: Steppe;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
 }

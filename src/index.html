@@ -12,10 +12,13 @@
         <main>
             <section class="collection-settings">
                 <div class="wrapper">
-                   <div class="effects-and-seach">
+                   <div class="effects-and-seach-wrap">
                        <div class="sound"></div>
                        <div class="snow"></div>
-                       <div class="search-set"></div>
+                       <div class="search-set">
+                           <input type="search" placeholder="Поиск">
+                           <div class="loupe"></div>
+                       </div>
                     </div>
                     <div class="sort-wrap">
                        <p class="sort-static">
@@ -31,14 +34,10 @@
                        </div>
                     </div> 
                     <div class="category-wrap">
-                        <p class="category-static">
-                            Категории
-                        </p>
-                        <div class="category-set">
-                            <p class="static">
-                                Все
-                            </p> 
-                        </div>
+/                        <label class="category-set">
+                            <input type="checkbox" name="category-set_square" class="category-set__square">
+                            <span class="category-set__static">Все</span> 
+                        </label>
                     </div>
                     <div class="form-wrap">
                         <p class="form-static">
@@ -113,15 +112,15 @@
                         </p>
                         <div class="size-set">
                             <div class="large-set">
-                                <input type="checkbox" name="large-set_square" class="large-set__square"></input>
+                                <input type="checkbox" name="large-set_square" class="large-set__square" checked></input>
                                 <label for="large-set_square" class="large-set__static">Большой</label>
                             </div>
                             <div class="middle-set">
-                                <input type="checkbox" name="middle-set_square" class="middle-set__square"></input>
+                                <input type="checkbox" name="middle-set_square" class="middle-set__square" checked></input>
                                 <label for="middle_set-square" class="middle-set__static">Средний</label>
                             </div>
                             <div class="little-set">
-                                <input type="checkbox" name="little-set_square" class="little-set__square"></input>
+                                <input type="checkbox" name="little-set_square" class="little-set__square" checked></input>
                                 <label for="little-set_square" class="little-set__static">Маленький</label>
                             </div>
                         </div>
@@ -132,44 +131,45 @@
                     </div>
                     <div class="reset-wrap">
                         <div class="reset-filters">
-                            <p class="reset-filters__reset-static">Сбросить фильтры</p>
+                            
+                            <p class="reset-filters__reset-static"><input type="button" value="Сбросить фильтры"></p>
                         </div>
                         <div class="reset-settings">
-                            <p class="reset-settings__reset-static">Сбросить настройки</p>
+                            <p class="reset-settings__reset-static"> <input type="button" value="Сбросить настройки"></p>
                         </div>
                     </div> 
                 </div>
             </section>
             <section class="collection-new-year"></section>
         </main>
-        <div class="toyCard">
+        <div class="ExptoyCard">
             <div class="nameToy">
                 <h2 class="nameToy__name">Большой шар с рисунком Цветок</h2>
                 <img class="nameToy__pic" src="./assets/toys/59.png" alt="toy" >            
             </div>
             <div class="countToy">
                 <span class="countToy__count-static">Количество</span>
-                <span class="countToy__count"></span>
+                <!-- <span class="countToy__count"></span> -->
             </div>
             <div class="yearToy">
                 <span class="yearToy__year-static">Год покупки:</span>
-                <span class="yearToy__year"></span>
+                <!-- <span class="yearToy__year"></span> -->
             </div>
             <div class="shapeToy">                
                 <span class="shapeToy__shape-static">Форма игрушки:</span>
-                <span class="shapeToy__shape"></span>
+                <!-- <span class="shapeToy__shape"></span> -->
             </div>    
             <div class="colorToy">                
                 <span class="colorToy__color-static">Цвет игрушки:</span>
-                <span class="colorToy__color"></span>
+                <!-- <span class="colorToy__color"></span> -->
             </div>
             <div class="sizeToy">                
                 <span class="sizeToy__size-static">Размер игрушки:</span>
-                <span class="sizeToy__size"></span>
+                <!-- <span class="sizeToy__size"></span> -->
             </div>
             <div class="favoriteToy">                
                 <span class="favoriteToy__favorite-static">Любимая:</span>
-                <span class="favoriteToy__favorite"></span>
+                <!-- <span class="favoriteToy__favorite"></span> -->
             </div>
         </div>
         <footer>

@@ -2,15 +2,11 @@ import './null.scss';
 import './global.scss';
 import './card.scss';
 import data from './data.js'
-// const bgImg=require('./assets/ball')
 const collection_new_year: HTMLElement | null = document.querySelector('.collection-new-year');
-// console.log(main);
-// console.log(data);
-// const block:HTMLElement=document.createElement('div');
-// block.className='exampleDiv';
-const addElem = (data:any) => {
+const renderToys = (data:any) => {
     const toyCard: HTMLElement = document.createElement('div');
     toyCard.classList.add(`toyCard`);
+   
         
     const nameToy: HTMLElement = document.createElement('div');
     nameToy.classList.add(`nameToy`);
@@ -57,33 +53,39 @@ const addElem = (data:any) => {
         sizeToy_size.classList.add(`sizeToy__size`);
 
     const favoriteToy: HTMLElement = document.createElement('div');
-    favoriteToy.classList.add(`toyCard`);
+    favoriteToy.classList.add(`favoriteToy`);
         const favoriteToy_favorite_static: HTMLElement = document.createElement('span');
         favoriteToy_favorite_static.classList.add(`favoriteToy__favorite-static`);
         const favoriteToy_favorite: HTMLElement = document.createElement('span');
         favoriteToy_favorite.classList.add(`favoriteToy__favorite`);
-        
+    
+    nameToy_name.innerText=`${data.name}`;
     nameToy.appendChild(nameToy_name);
     nameToy.appendChild(nameToy_pic);
 
+    countToy_count_static.innerText=`Количество: ${data.count}`;
     countToy.appendChild(countToy_count_static);
-    countToy.appendChild(countToy_count);
+    // countToy.appendChild(countToy_count);
 
+    yearToy_year_static.innerText=`Год покупки: ${data.year}`;
     yearToy.appendChild(yearToy_year_static);
-    yearToy.appendChild(yearToy_year);
+    // yearToy.appendChild(yearToy_year);
 
+    shapeToy_shape_static.innerText=`Форма игрушки: ${data.shape}`;
     shapeToy.appendChild(shapeToy_shape_static);
-    shapeToy.appendChild(shapeToy_shape);
+    // shapeToy.appendChild(shapeToy_shape);
 
+    colorToy_color_static.innerText=`Цвет игрушки: ${data.color}`;
     colorToy.appendChild(colorToy_color_static);
-    colorToy.appendChild(colorToy_color);
+    // colorToy.appendChild(colorToy_color);
 
+    sizeToy_size_static.innerText=`Размер игрушки: ${data.size}`;
     sizeToy.appendChild(sizeToy_size_static);
-    sizeToy.appendChild(sizeToy_size);
+    // sizeToy.appendChild(sizeToy_size);
 
+    favoriteToy_favorite_static.innerText=`Любимая: ${data.favorite}`;
     favoriteToy.appendChild(favoriteToy_favorite_static);
-    favoriteToy.appendChild(favoriteToy_favorite);
-
+    // favoriteToy.appendChild(favoriteToy_favorite);
 
     toyCard.appendChild(nameToy);
     toyCard.appendChild(countToy);
@@ -92,14 +94,13 @@ const addElem = (data:any) => {
     toyCard.appendChild(colorToy);
     toyCard.appendChild(sizeToy);
     toyCard.appendChild(favoriteToy);
-
-    // img.src = `./assets/svg/rs_school_logo.svg`;
-    // toyCard.classList.add(`exampleDiv${data.num}`);
-    // toyCard.innerText=`${data.num}) ${data.name}`;
-    // main!.appendChild(toyCard);
+    
     collection_new_year!.appendChild(toyCard);
+    toyCard.addEventListener('click',()=>{
+        console.log(data.name);
+    })
 };
 data.forEach(item => {
-    console.log(item);
-    addElem(item);
+    // console.log(item);
+    renderToys(item);
 })

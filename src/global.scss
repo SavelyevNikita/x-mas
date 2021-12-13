@@ -47,17 +47,18 @@ body {
 main {
     margin: 0 auto;
     width: 1920px;
-    border: $col 1px solid;
+    // border: $col 1px solid;
     display: flex;
     .collection-settings {
         .wrapper {
+            margin-top: 50px;
             max-width: 450px;
             height: 900px;
-            border: $col 1px solid;
+            // border: $col 1px solid;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            .effects-and-seach {
+            .effects-and-seach-wrap {
                 display: flex;
                 justify-content: space-between;
                 .sound {
@@ -78,6 +79,14 @@ main {
                     backdrop-filter: blur(31px);
                     border-radius: 30px;
                     border: solid #24C5DB 1px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .loupe{
+                        background: url("./assets/svg/search.svg") 0 0/contain no-repeat;
+                        width: 24px;
+                        height: 24px;
+                    }
                 }
             }
             .sort-wrap{
@@ -87,7 +96,9 @@ main {
                     @extend %text-shared;
                 }
                 .sort-set{
-                    // margin: 0 auto;   
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     width: 100%;
                     height: 30px;
                     background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(255, 255, 255, 0.2) 0%, rgba(157, 243, 255, 0.2) 100%);
@@ -100,14 +111,38 @@ main {
                 }
             }
             .category-wrap{
-                .category-static {
-                    @extend %text-shared;
+                .category-set__static {
+                    display: flex;
+                    align-items: center;
+    
+                    @extend %text-large-middle-little;
                 }
-                .category-set{
-                    .static{
-                        @extend %text-shared;
-                    }
+                // .category-set__square{
+                //     // display: none;
+                // }
+                .category-set__static::before{
+                    content: "";
+                    margin-right: 20px;
+                    // display: inline-block;
+                    width: 24px;
+                    height: 24px;
+                    // background: #24C5DB;
+                    // border-radius: 2px;
+                    background: url("./assets/svg/checkbox-checked.svg") 0 0/contain no-repeat;
+
                 }
+                .category-set__static::after{
+                    content: "";
+                    margin-right: 20px;
+                    width: 24px;
+                    height: 24px;
+                    background: url("./assets/svg/checkbox.svg") 0 0/contain no-repeat;
+                    opacity: 0;
+                }
+                .category-set_square:checked + .category-set__static::after{
+                    opacity: 1;
+                }
+
             }
             .form-wrap{
                 .form-static{
@@ -240,6 +275,14 @@ main {
                     justify-content: space-between;
                 }
             }
+            .favorite-wrap{
+                .favorite-static{
+                    @extend %text-large-middle-little;
+                    width: 100%;
+                    height: 22px;     
+                }
+
+            }
             .reset-wrap{
                 display: flex;
                 justify-content: space-between;
@@ -277,7 +320,7 @@ footer {
     margin: 0 auto;
     margin-top: auto;
     width: 1920px;
-    border: rebeccapurple 1px solid;
+    // border: rebeccapurple 1px solid;
     height: 100px;
     display: flex;
     align-items: center;
@@ -296,15 +339,17 @@ footer {
     color: #fff;
     text-decoration: none;
 }
-
-.exampleDiv{
-    color: #fff;
-    border: solid #24C5DB 1px;
-    width: 222px;
-    height: 342px;
-    margin: 10px;
+.ExptoyCard{
+    display: none;
 }
-.exampleImg{
-    width: 100px;
-    height: 100px;
-}
+// .exampleDiv{
+//     color: #fff;
+//     border: solid #24C5DB 1px;
+//     width: 222px;
+//     height: 342px;
+//     margin: 10px;
+// }
+// .exampleImg{
+//     width: 100px;
+//     height: 100px;
+// }
