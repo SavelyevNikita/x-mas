@@ -1,0 +1,44 @@
+#toyCard{
+    padding: 10px;
+    width: 222px;
+    height: 342px;
+    background: radial-gradient(109.56% 109.56% at 0% -2.94%, rgba(255, 255, 255, 0.5) 0%, rgba(179, 246, 255, 0.5) 100%);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: solid #24C5DB 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .nameToy{
+        .nameToy__name{
+            font-family: Neucha;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+        }
+        .nameToy__pic{
+            width: 100px;
+            height: 100px;
+        }
+
+    }
+    .countToy__count-static, 
+    .yearToy__year-static, 
+    .shapeToy__shape-static,
+    .colorToy__color-static, 
+    .sizeToy__size-static, 
+    .favoriteToy__favorite-static{
+        font-family: Steppe;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 12px;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+    }
+}

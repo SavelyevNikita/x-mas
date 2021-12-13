@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Neucha';
+    src: url('./assets/fonts/Neucha-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
 $col:rgb(255, 0, 0);
 body {
     display: flex;
@@ -8,7 +16,7 @@ body {
 %text-shared {
     width: 106px;
     height: 22px;
-    font-family: Neucha;
+    font-family: 'Neucha';
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -40,6 +48,7 @@ main {
     margin: 0 auto;
     width: 1920px;
     border: $col 1px solid;
+    display: flex;
     .collection-settings {
         .wrapper {
             max-width: 450px;
@@ -169,6 +178,9 @@ main {
                     display: flex;
                     justify-content: space-between;           
                     .white{
+                        &:hover{
+                            cursor: pointer
+                        }
                         background: url("./assets/svg/white-sqr.svg");
                         width: 24px;
                         height: 24px;
@@ -255,6 +267,10 @@ main {
             }
         }
     }
+    .collection-new-year{
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
 footer {
@@ -281,10 +297,14 @@ footer {
     text-decoration: none;
 }
 
-#sourceItemTemp {
-    display: none;
+.exampleDiv{
+    color: #fff;
+    border: solid #24C5DB 1px;
+    width: 222px;
+    height: 342px;
+    margin: 10px;
 }
-
-#newsItemTemp {
-    display: none;
+.exampleImg{
+    width: 100px;
+    height: 100px;
 }
