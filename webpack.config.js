@@ -5,11 +5,15 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 
 const baseConfig = {
-    entry: path.resolve(__dirname, './src/index.ts'),
+    entry: [path.resolve(__dirname, './src/index.ts'), path.resolve(__dirname, './src/slider.ts')], 
     mode: 'development',
     devtool: 'inline-source-map',
     module: {
         rules: [
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+              },
             {
                 test: /\.(ts|tsx)?$/,
                 use: 'ts-loader',
@@ -20,7 +24,7 @@ const baseConfig = {
                 type: 'asset/resource',
             },
             {
-                test: /\.scss$/i,
+                test: /\.s[ac]ss$/i,
                 use: ["style-loader", "css-loader", "sass-loader"],
             },
             {

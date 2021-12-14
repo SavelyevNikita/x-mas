@@ -2,17 +2,19 @@ import './null.scss';
 import './global.scss';
 import './card.scss';
 import data from './data.js'
-const collection_new_year: HTMLElement | null = document.querySelector('.collection-new-year');
+const collection_new_year: HTMLElement = document.querySelector('.collection-new-year')!;
 const renderToys = (data:any) => {
-    const toyCard: HTMLElement = document.createElement('div');
+    const toyCard: HTMLElement = document.createElement('div')!;
     toyCard.classList.add(`toyCard`);
+    toyCard.classList.add(`toyCard${data.num}`);
    
         
     const nameToy: HTMLElement = document.createElement('div');
     nameToy.classList.add(`nameToy`);
         const nameToy_name: HTMLElement = document.createElement('h2');
         nameToy_name.classList.add(`nameToy__name`);
-        const nameToy_pic: HTMLImageElement  = document.createElement('img');
+        // const nameToy_pic: HTMLImageElement  = document.createElement('img');
+        const nameToy_pic: HTMLImageElement  = new Image;
         nameToy_pic.classList.add(`nameToy__pic`);
         nameToy_pic.src = `./assets/toys/${data.num}.png`;
         nameToy_pic.alt=`${data.num}.png`;
@@ -95,7 +97,7 @@ const renderToys = (data:any) => {
     toyCard.appendChild(sizeToy);
     toyCard.appendChild(favoriteToy);
     
-    collection_new_year!.appendChild(toyCard);
+    collection_new_year.appendChild(toyCard);
     toyCard.addEventListener('click',()=>{
         console.log(data.name);
     })
