@@ -37,10 +37,9 @@ export class Card {
 
     renderToy() {
         const toyCard: HTMLElement = document.createElement('div')!;
-        toyCard.innerHTML='';
+        toyCard.innerHTML = '';
         toyCard.classList.add(`toyCard`);
         toyCard.classList.add(`toyCard${this.num}`);
-        if (this.theСhosen) toyCard.classList.add(`Сhosen`); else (toyCard.classList.remove(`Сhosen`));
 
         const nameToy: HTMLElement = document.createElement('div');
         nameToy.classList.add(`nameToy`);
@@ -129,15 +128,20 @@ export class Card {
         toyCard.appendChild(sizeToy);
         toyCard.appendChild(favoriteToy);
         toyCard.addEventListener('click', () => {
-            this.ischoosen(); 
-            console.log(this.name); 
+            this.ischoosen();
+            console.log(this.name);
+            if (this.theСhosen) toyCard.classList.add(`Сhosen`);
+            else toyCard.classList.remove(`Сhosen`);
+
         });
         return toyCard;
     };
     ischoosen() {
-        console.log('ischoosen'); 
-        console.log(this.theСhosen); 
-        if (!this.theСhosen) this.theСhosen = true; else this.theСhosen = false;;
+        if (!this.theСhosen) {
+            this.theСhosen = true;
+        } else {
+            this.theСhosen = false;
+        }
         this.renderToy();
     };
 

@@ -27,7 +27,7 @@
                        <div class="sort-set">
                            <select name="sort-set-select" id="sort_set_select">
                                <option value="A_Z" id="A_Z">По названию от "А" до "Я"</option>
-                               <option value="Z-A" id="A_Z">По названию от "Я" до "А"</option>
+                               <option value="Z-A" id="Z_A">По названию от "Я" до "А"</option>
                                <option value="countUp" id="countUp">По количеству в порядке возрастания</option>
                                <option value="countDown" id="countDown">По количеству в порядке убывания</option>
                            </select>
@@ -119,27 +119,34 @@
                             Размер
                         </p>
                         <div class="size-set">
-                            <div class="large-set">
-                                <input type="checkbox" name="large-set_square" class="large-set__square" checked></input>
-                                <label for="large-set_square" class="large-set__static">Большой</label>
+                            <div class="large-set">                                
+                                <label>
+                                    <input type="checkbox" name="large-set_square" class="large-set__square" checked>                                    
+                                    <span class="large-set__static">Большой</span>
+                                </label>
                             </div>
-                            <div class="middle-set">
-                                <input type="checkbox" name="middle-set_square" class="middle-set__square" checked></input>
-                                <label for="middle_set-square" class="middle-set__static">Средний</label>
+                            <div class="middle-set">                                
+                                <label>
+                                    <input type="checkbox" name="middle-set_square" class="middle-set__square" checked>
+                                    <span class="middle-set__static">Средний</span> 
+                                </label>
                             </div>
-                            <div class="little-set">
-                                <input type="checkbox" name="little-set_square" class="little-set__square" checked></input>
-                                <label for="little-set_square" class="little-set__static">Маленький</label>
+                            <div class="little-set">                                
+                                <label>
+                                    <input type="checkbox" name="little-set_square" class="little-set__square" checked>
+                                    <span class="little-set__static">Маленький</span>
+                                </label>
                             </div>
                         </div>
                     </div> 
                     <div class="favorite-wrap">
-                        <input type="checkbox" name="favorite_square" class="favorite-square"></input>
-                        <label for="favorite_square" class="favorite-static">Только любимые</label>
+                        <label class="favorite-static">
+                            <input type="checkbox" name="favorite_square" class="favorite-square">
+                            <span>Только любимые</span>
+                        </label>
                     </div>
                     <div class="reset-wrap">
-                        <div class="reset-filters">
-                            
+                        <div class="reset-filters">                            
                             <p class="reset-filters__reset-static"><input type="button" value="Сбросить фильтры"></p>
                         </div>
                         <div class="reset-settings">

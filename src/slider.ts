@@ -21,7 +21,7 @@ const rightyearslider :HTMLElement =document.getElementById('yearslider-snap-val
 set0fSlider.noUiSlider.on('update', () => {
 
     let outputValue = set0fSlider.noUiSlider.get() as string[];
-    // console.log('outputValue');
+    // console.log(outputValue);
     // console.log(outputValue);
     if (outputValue) {
         leftset0fslider.innerHTML = parseInt(outputValue[0]).toString();
@@ -40,7 +40,7 @@ noUiSlider.create(yearSlider, {
 
 yearSlider.noUiSlider.on('update', () => {
     let outputValue = yearSlider.noUiSlider.get() as string[];
-    // console.log('outputValue');
+    // console.log(outputValue);
     // console.log(outputValue);
     if (outputValue) {
         leftyearslider.innerHTML = parseInt(outputValue[0]).toString();

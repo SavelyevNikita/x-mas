@@ -5,7 +5,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 
 const baseConfig = {
-    entry: [path.resolve(__dirname, './src/index.ts'), path.resolve(__dirname, './src/slider.ts')], 
+    entry: [path.resolve(__dirname, './src/index.ts'),
+    path.resolve(__dirname, './src/slider.ts'),
+    path.resolve(__dirname, './src/sorting.ts')],
     mode: 'development',
     devtool: 'inline-source-map',
     module: {
@@ -13,7 +15,7 @@ const baseConfig = {
             {
                 test: /\.css$/i,
                 use: ["style-loader", "css-loader"],
-              },
+            },
             {
                 test: /\.(ts|tsx)?$/,
                 use: 'ts-loader',
@@ -30,7 +32,7 @@ const baseConfig = {
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',
-              },
+            },
         ],
     },
     optimization: {
@@ -53,10 +55,10 @@ const baseConfig = {
         new CleanWebpackPlugin(),
         new CopyPlugin({
             patterns: [
-              { from: path.resolve(__dirname, './src/assets'), to: path.resolve(__dirname, './dist/assets') },
-            //   { from: "other", to: "public" },
+                { from: path.resolve(__dirname, './src/assets'), to: path.resolve(__dirname, './dist/assets') },
+                //   { from: "other", to: "public" },
             ],
-          }),
+        }),
     ],
 
 };
