@@ -2,15 +2,9 @@ import '../null.scss';
 import './card.scss';
 import { interCard, Card } from './card';
 
-// export interface interCards {
-//     data: interCard[];
-// }
-
-// export class Cards extends Card {
 export class Cards {
     data: interCard[];
     constructor(data: interCard[]) {
-        // super(renderToy);
         this.data = data;
     }
     renderNull(){

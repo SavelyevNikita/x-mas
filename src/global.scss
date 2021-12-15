@@ -3,10 +3,11 @@
     src: url('./assets/fonts/Neucha-Regular.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
-  }
+}
 
-
-$col:rgb(255, 0, 0);
+$col:rgb(255,
+0,
+0);
 body {
     display: flex;
     flex-direction: column;
@@ -23,7 +24,7 @@ body {
     line-height: 22px;
     text-transform: uppercase;
     color: #FFFFFF;
-  }
+}
 
 %secondary-text-shared {
     font-family: Steppe;
@@ -34,7 +35,8 @@ body {
     text-align: center;
     color: #FFFFFF;
 }
-%text-large-middle-little{
+
+%text-large-middle-little {
     font-family: Steppe;
     font-style: normal;
     font-weight: normal;
@@ -82,20 +84,20 @@ main {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    .loupe{
+                    .loupe {
                         background: url("./assets/svg/search.svg") 0 0/contain no-repeat;
                         width: 24px;
                         height: 24px;
                     }
                 }
             }
-            .sort-wrap{
+            .sort-wrap {
                 display: flex;
                 justify-content: space-between;
                 .sort-static {
                     @extend %text-shared;
                 }
-                .sort-set{
+                .sort-set {
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -105,202 +107,224 @@ main {
                     backdrop-filter: blur(31px);
                     border-radius: 30px;
                     border: solid #24C5DB 1px;
-                    .sort-set_select{
+                    .sort-set_select {
                         margin: 0 auto;
                     }
                 }
             }
-            .category-wrap{
+            .category-wrap {
+                .category-static {
+                    @extend %text-shared;
+                }
                 .category-set__static {
                     display: flex;
                     align-items: center;
-    
                     @extend %text-large-middle-little;
                 }
-                // .category-set__square{
-                //     // display: none;
-                // }
-                .category-set__static::before{
-                    content: "";
-                    margin-right: 20px;
-                    // display: inline-block;
-                    width: 24px;
-                    height: 24px;
-                    // background: #24C5DB;
-                    // border-radius: 2px;
-                    background: url("./assets/svg/checkbox-checked.svg") 0 0/contain no-repeat;
-
+                .category-set__square {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
                 }
-                .category-set__static::after{
-                    content: "";
-                    margin-right: 20px;
+                .category-set__static-checkbox {
                     width: 24px;
                     height: 24px;
                     background: url("./assets/svg/checkbox.svg") 0 0/contain no-repeat;
-                    opacity: 0;
                 }
-                .category-set_square:checked + .category-set__static::after{
-                    opacity: 1;
+                .category-set__square:checked+.category-set__static-checkbox {
+                    background: url("./assets/svg/checkbox-checked.svg") 0 0/contain no-repeat;
                 }
-
             }
-            .form-wrap{
-                .form-static{
+            .form-wrap {
+                .form-static {
                     @extend %text-shared;
                 }
-
-                .form-set{
+                .form-set {
                     display: flex;
                     justify-content: space-between;
-                    .bell-static, 
-                    .ball-static, 
-                    .cone-static, 
-                    .star-static, 
-                    .snow-static, 
-                    .figurine-static{
+                    .bell-static,
+                    .ball-static,
+                    .cone-static,
+                    .star-static,
+                    .snow-static,
+                    .figurine-static {
                         @extend %secondary-text-shared;
                         // margin-top: 16px;
                     }
-                    .bell{
+                    .bell {
                         background: url("./assets/svg/bell-2.svg") 0 0/contain no-repeat;
                         width: 42px;
                         height: 42px;
                     }
-                    .ball{
+                    .ball {
                         background: url("./assets/svg/ball.svg") 0 0/contain no-repeat;
                         width: 42px;
                         height: 42px;
                     }
-                    .cone{
+                    .cone {
                         background: url("./assets/svg/cone.svg") 0 0/contain no-repeat;
                         width: 42px;
                         height: 42px;
                     }
-                    .star{
+                    .star {
                         background: url("./assets/svg/star.svg") 0 0/contain no-repeat;
                         width: 42px;
                         height: 42px;
                     }
-                    .snow{
+                    .snow {
                         background: url("./assets/svg/snow.svg") 0 0/contain no-repeat;
                         width: 42px;
                         height: 42px;
                     }
-                    .figurine{
+                    .figurine {
                         background: url("./assets/svg/toy.svg") 0 0/contain no-repeat;
                         width: 42px;
                         height: 42px;
                     }
-                    .bell-static, 
-                    .ball-static, 
-                    .cone-static, 
-                    .star-static, 
-                    .snow-static, 
-                    .figurine-static{
+                    .bell-static,
+                    .ball-static,
+                    .cone-static,
+                    .star-static,
+                    .snow-static,
+                    .figurine-static {
                         @extend %secondary-text-shared;
                     }
                 }
             }
-            .color-wrap{    
+            .color-wrap {
                 // display: flex;
                 // justify-content: space-between;
-                .color-static{
+                .color-static {
                     @extend %text-shared;
-                }           
-                .color-set{
+                }
+                .color-set {
                     width: 225px;
                     height: 24px;
                     display: flex;
-                    justify-content: space-between;           
-                    .white{
-                        &:hover{
+                    justify-content: space-between;
+                    .white {
+                        &:hover {
                             cursor: pointer
                         }
                         background: url("./assets/svg/white-sqr.svg");
                         width: 24px;
                         height: 24px;
                     }
-                    .yellow{
+                    .yellow {
                         background: url("./assets/svg/yellow-sqr.svg");
                         width: 24px;
                         height: 24px;
                     }
-                    .red{
+                    .red {
                         background: url("./assets/svg/red-sqr.svg");
                         width: 24px;
                         height: 24px;
                     }
-                    .blue{
+                    .blue {
                         background: url("./assets/svg/blue-sqr.svg");
                         width: 24px;
                         height: 24px;
                     }
-                    .green{
+                    .green {
                         background: url("./assets/svg/green-sqr.svg");
                         width: 24px;
                         height: 24px;
                     }
                 }
             }
-            .year-wrap{
-                .year-static{
+            .year-wrap {
+                .year-static {
                     @extend %text-shared;
                     width: 100%;
                     height: 22px;
                 }
-                .year-set-min, .year-set-max{
+                .year-set-min,
+                .year-set-max {
                     @extend %text-shared;
                 }
-                .year-set-min-max{
+                .year-set-min-max {
                     display: flex;
                     justify-content: space-between;
                 }
             }
-            .set0f-wrap{
-                .set0f-static{
+            .set0f-wrap {
+                .set0f-static {
                     @extend %text-shared;
                     width: 100%;
-                    height: 22px;    
+                    height: 22px;
                 }
-                .set0f-set-min, .set0f-set-max{
+                .set0f-set-min,
+                .set0f-set-max {
                     @extend %text-shared;
                 }
-                .set0f-set-min-max{
+                .set0f-set-min-max {
                     display: flex;
                     justify-content: space-between;
                 }
             }
-            .size-wrap{
-                .size-static{
+            .size-wrap {
+                .size-static {
                     @extend %text-shared;
                     width: 100%;
-                    height: 22px;   
+                    height: 22px;
                 }
-                .size-set{
-                    .large-set__square{
-                        background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(255, 255, 255, 0.2) 0%, rgba(157, 243, 255, 0.2) 100%);
-                        backdrop-filter: blur(31px);
-                        border-radius: 5px;
+                .size-set {
+                    // .large-set__square,
+                    // .middle-set__square,
+                    // .little-set__square {
+                    //     -webkit-appearance: none;
+                    //     -moz-appearance: none;
+                    //     appearance: none;
+                    // }
+                    // .large-set__static,
+                    // .middle-set__static,
+                    // .little-set__static {
+                    //     @extend %text-large-middle-little
+                    // }
+                    .large-set__static-checkbox {
+                        width: 24px;
+                        height: 24px;
+                        background: url("./assets/svg/checkbox.svg");
                     }
-                    .large-set__static, .middle-set__static, .little-set__static{
-                        @extend %text-large-middle-little
+                    .large-set__square:checked + .large-set__static-checkbox {
+                        width: 24px;
+                        height: 24px;
+                        background: url("./assets/svg/checkbox-checked.svg") 0 0/contain no-repeat;
                     }
-                    display: flex;
-                    justify-content: space-between;
+                    // display: flex;
+                    // justify-content: space-between;
                 }
+                // .category-set__square{
+                //     -webkit-appearance: none;
+                //     -moz-appearance: none;
+                //     appearance: none;
+                // }
+                // .category-set__static-checkbox{
+                //     width: 24px;
+                //     height: 24px;
+                //     background: url("./assets/svg/checkbox.svg") 0 0/contain no-repeat;
+                // }
+                // .category-set__square:checked + .category-set__static-checkbox{
+                //     background: url("./assets/svg/checkbox-checked.svg") 0 0/contain no-repeat;
+                // }
             }
-            .favorite-wrap{
-                .favorite-static{
+            .favorite-wrap {
+                .favorite-static {
                     @extend %text-large-middle-little;
                     width: 100%;
-                    height: 22px;     
+                    height: 22px;
+                    .favorite-square-checkbox{
+                        width: 24px;
+                        height: 24px;
+                        background: url("./assets/svg/checkbox.svg") 0 0/contain no-repeat;  
+                    }
                 }
-
             }
-            .reset-wrap{
+            .reset-wrap {
                 display: flex;
                 justify-content: space-between;
-                .reset-filters, .reset-settings{
+                .reset-filters,
+                .reset-settings {
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -310,7 +334,8 @@ main {
                     backdrop-filter: blur(31px);
                     border-radius: 30px;
                     border: solid #24C5DB 1px;
-                    .reset-filters__reset-static, .reset-settings__reset-static{
+                    .reset-filters__reset-static,
+                    .reset-settings__reset-static {
                         font-family: Steppe;
                         font-style: normal;
                         font-weight: normal;
@@ -318,13 +343,12 @@ main {
                         line-height: 14px;
                         text-align: center;
                         color: #FFFFFF;
-
                     }
                 }
             }
         }
     }
-    .collection-new-year{
+    .collection-new-year {
         display: flex;
         flex-wrap: wrap;
     }
@@ -353,9 +377,11 @@ footer {
     color: #fff;
     text-decoration: none;
 }
-.ExptoyCard{
+
+.ExptoyCard {
     display: none;
 }
+
 // .exampleDiv{
 //     color: #fff;
 //     border: solid #24C5DB 1px;

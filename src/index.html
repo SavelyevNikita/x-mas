@@ -35,9 +35,13 @@
                        </div>
                     </div> 
                     <div class="category-wrap">
-                        <label class="category-set">
+                        <p class="category-static">
+                            Категории
+                        </p>
+                        <label class="category-set__static">
                             <input type="checkbox" name="category-set_square" class="category-set__square">
-                            <span class="category-set__static">Все</span> 
+                            <span class="category-set__static-checkbox"></span>
+                            Все 
                         </label>
                     </div>
                     <div class="form-wrap">
@@ -120,30 +124,28 @@
                             Размер
                         </p>
                         <div class="size-set">
-                            <div class="large-set">                                
-                                <label>
-                                    <input type="checkbox" name="large-set_square" class="large-set__square" checked>                                    
-                                    <span class="large-set__static">Большой</span>
+                                <label class="large-set__static">
+                                    <input type="checkbox" name="large-set_square" class="large-set__square" >                                    
+                                    <span class="large-set__static-checkbox"></span>
+                                    Большой
                                 </label>
-                            </div>
-                            <div class="middle-set">                                
                                 <label>
                                     <input type="checkbox" name="middle-set_square" class="middle-set__square" checked>
-                                    <span class="middle-set__static">Средний</span> 
+                                    <span class="middle-set__static-checkbox"></span> 
+                                    Средний
                                 </label>
-                            </div>
-                            <div class="little-set">                                
                                 <label>
                                     <input type="checkbox" name="little-set_square" class="little-set__square" checked>
-                                    <span class="little-set__static">Маленький</span>
+                                    <span class="little-set__static-checkbox"></span>
+                                    Маленький
                                 </label>
-                            </div>
                         </div>
                     </div> 
                     <div class="favorite-wrap">
                         <label class="favorite-static">
                             <input type="checkbox" name="favorite_square" class="favorite-square">
-                            <span>Только любимые</span>
+                            <span class="favorite-square-checkbox"></span>
+                            Только любимые
                         </label>
                     </div>
                     <div class="reset-wrap">
@@ -161,7 +163,7 @@
         <div class="ExptoyCard">
             <div class="nameToy">
                 <h2 class="nameToy__name">Большой шар с рисунком Цветок</h2>
-                <img class="nameToy__pic" src="./assets/toys/59.png" alt="toy" >            
+                <img class="nameToy__pic" src="assets/toys/59.png" alt="toy" >            
             </div>
             <div class="countToy">
                 <span class="countToy__count-static">Количество</span>
