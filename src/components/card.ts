@@ -129,7 +129,7 @@ export class Card {
         toyCard.appendChild(favoriteToy);
         toyCard.addEventListener('click', () => {
             this.ischoosen();
-            console.log(this.name);
+            // console.log(this.name);
             if (this.theСhosen) toyCard.classList.add(`Сhosen`);
             else toyCard.classList.remove(`Сhosen`);
 

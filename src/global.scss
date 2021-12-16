@@ -145,7 +145,6 @@ main {
                     .bell-static,
                     .ball-static,
                     .cone-static,
-                    .star-static,
                     .snow-static,
                     .figurine-static {
                         @extend %secondary-text-shared;
@@ -166,11 +165,6 @@ main {
                         width: 42px;
                         height: 42px;
                     }
-                    .star {
-                        background: url("./assets/svg/star.svg") 0 0/contain no-repeat;
-                        width: 42px;
-                        height: 42px;
-                    }
                     .snow {
                         background: url("./assets/svg/snow.svg") 0 0/contain no-repeat;
                         width: 42px;
@@ -184,7 +178,6 @@ main {
                     .bell-static,
                     .ball-static,
                     .cone-static,
-                    .star-static,
                     .snow-static,
                     .figurine-static {
                         @extend %secondary-text-shared;
