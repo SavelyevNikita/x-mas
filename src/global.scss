@@ -374,15 +374,19 @@ footer {
 .ExptoyCard {
     display: none;
 }
-
-// .exampleDiv{
-//     color: #fff;
-//     border: solid #24C5DB 1px;
-//     width: 222px;
-//     height: 342px;
-//     margin: 10px;
-// }
-// .exampleImg{
-//     width: 100px;
-//     height: 100px;
-// }
+.ballShaped-dispaly-none,
+.bellShaped-dispaly-none,
+.coneShaped-dispaly-none,
+.snowShaped-dispaly-none,
+.figurineShaped-dispaly-none,
+.white-dispaly-none,
+.yellow-dispaly-none,
+.red-dispaly-none,
+.blue-dispaly-none,
+.green-dispaly-none,
+.large-dispaly-none,
+.middle-dispaly-none,
+.little-dispaly-none,
+.favorite-dispaly-none{
+    display: none;
+}
