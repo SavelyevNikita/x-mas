@@ -226,6 +226,7 @@ main {
                 }
             }
             .year-wrap {
+                
                 .year-static {
                     @extend %text-shared;
                     width: 100%;
@@ -234,6 +235,15 @@ main {
                 .year-set-min,
                 .year-set-max {
                     @extend %text-shared;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 90px;
+                    height: 28px;
+                    background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(255, 255, 255, 0.2) 0%, rgba(157, 243, 255, 0.2) 100%);
+                    backdrop-filter: blur(31px);
+                    border-radius: 30px;
+                    border: solid #24C5DB 1px;
                 }
                 .year-set-min-max {
                     display: flex;
@@ -249,6 +259,15 @@ main {
                 .set0f-set-min,
                 .set0f-set-max {
                     @extend %text-shared;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 90px;
+                    height: 28px;
+                    background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(255, 255, 255, 0.2) 0%, rgba(157, 243, 255, 0.2) 100%);
+                    backdrop-filter: blur(31px);
+                    border-radius: 30px;
+                    border: solid #24C5DB 1px;
                 }
                 .set0f-set-min-max {
                     display: flex;
@@ -374,19 +393,22 @@ footer {
 .ExptoyCard {
     display: none;
 }
-.ballShaped-dispaly-none,
-.bellShaped-dispaly-none,
-.coneShaped-dispaly-none,
-.snowShaped-dispaly-none,
-.figurineShaped-dispaly-none,
-.white-dispaly-none,
-.yellow-dispaly-none,
-.red-dispaly-none,
-.blue-dispaly-none,
-.green-dispaly-none,
-.large-dispaly-none,
-.middle-dispaly-none,
-.little-dispaly-none,
-.favorite-dispaly-none{
+.year-display-none,
+.quantity-display-none,
+.value-display-none,
+.ballShaped-display-none,
+.bellShaped-display-none,
+.coneShaped-display-none,
+.snowShaped-display-none,
+.figurineShaped-display-none,
+.white-display-none,
+.yellow-display-none,
+.red-display-none,
+.blue-display-none,
+.green-display-none,
+.large-display-none,
+.middle-display-none,
+.little-display-none,
+.favorite-display-none{
     display: none;
 }

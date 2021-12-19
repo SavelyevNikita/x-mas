@@ -1,8 +1,12 @@
 import { interCard, Card } from './components/card';
-import data from './data.js'
-import { Cards } from './components/cards'
+import data from './data.js';
+import { Cards } from './components/cards';
+import { Slider } from './components/slider';
+import { electron } from 'webpack';
 
-class Sorting {
+
+export class Sorting {
+
   data: interCard[];
   ballShaped: boolean;
   bellShaped: boolean;
@@ -21,7 +25,15 @@ class Sorting {
   little: boolean;
 
   favorite: boolean;
+
+  text: string;
+
+  yearSetMin: number;
+  yearSetMax: number;
+  setOfMin: number;
+  setOfMax: number;
   constructor(data: interCard[]) {
+
     this.data = data;
 
     this.ballShaped = true;
@@ -41,103 +53,86 @@ class Sorting {
     this.little = false;
 
     this.favorite = true;
+
+    this.text = '';
+
+    this.yearSetMin = 1940;
+    this.yearSetMax = 2020;
+    this.setOfMin = 0;
+    this.setOfMax = 12;
+
   }
-  checkingFilter():void{
+  checkingFilter(): void {
 
-    console.log(`filter for ballShaped - ${this.ballShaped}`);
     if (!this.ballShaped) {
-      this.filterByShapeUnVisible('Форма игрушки: шар', 'ballShaped-dispaly-none');
+      this.filterByShapeUnVisible('Форма игрушки: шар', 'ballShaped-display-none');
     } else {
-      this.filterByShapeVisible('Форма игрушки: шар', 'ballShaped-dispaly-none');
+      this.filterByShapeVisible('Форма игрушки: шар', 'ballShaped-display-none');
     }
-    console.log(`filter for bellShaped - ${this.bellShaped}`);
     if (!this.bellShaped) {
-      this.filterByShapeUnVisible('Форма игрушки: колокольчик', 'bellShaped-dispaly-none');
+      this.filterByShapeUnVisible('Форма игрушки: колокольчик', 'bellShaped-display-none');
     } else {
-      this.filterByShapeVisible('Форма игрушки: колокольчик', 'bellShaped-dispaly-none');
+      this.filterByShapeVisible('Форма игрушки: колокольчик', 'bellShaped-display-none');
     }
-    console.log(`filter for coneShaped - ${this.coneShaped}`);
     if (!this.coneShaped) {
-      this.filterByShapeUnVisible('Форма игрушки: шишка', 'coneShaped-dispaly-none');
+      this.filterByShapeUnVisible('Форма игрушки: шишка', 'coneShaped-display-none');
     } else {
-      this.filterByShapeVisible('Форма игрушки: шишка', 'coneShaped-dispaly-none');
+      this.filterByShapeVisible('Форма игрушки: шишка', 'coneShaped-display-none');
     }
-
-    console.log(`filter for snowShaped - ${this.snowShaped}`);
     if (!this.snowShaped) {
-      this.filterByShapeUnVisible('Форма игрушки: снежинка', 'snowShaped-dispaly-none');
+      this.filterByShapeUnVisible('Форма игрушки: снежинка', 'snowShaped-display-none');
     } else {
-      this.filterByShapeVisible('Форма игрушки: снежинка', 'snowShaped-dispaly-none');
+      this.filterByShapeVisible('Форма игрушки: снежинка', 'snowShaped-display-none');
     }
-
-    console.log(`filter for figurineShaped - ${this.figurineShaped}`);
     if (!this.figurineShaped) {
-      this.filterByShapeUnVisible('Форма игрушки: фигурка', 'figurineShaped-dispaly-none');
+      this.filterByShapeUnVisible('Форма игрушки: фигурка', 'figurineShaped-display-none');
     } else {
-      this.filterByShapeVisible('Форма игрушки: фигурка', 'figurineShaped-dispaly-none');
+      this.filterByShapeVisible('Форма игрушки: фигурка', 'figurineShaped-display-none');
     }
-
-    console.log(`filter for white - ${this.white}`);
     if (!this.white) {
-      this.filterByColorUnVisible('Цвет игрушки: белый', 'white-dispaly-none');
+      this.filterByColorUnVisible('Цвет игрушки: белый', 'white-display-none');
     } else {
-      this.filterByColorVisible('Цвет игрушки: белый', 'white-dispaly-none');
+      this.filterByColorVisible('Цвет игрушки: белый', 'white-display-none');
     }
-
-    console.log(`filter for yellow - ${this.yellow}`);
     if (!this.yellow) {
-      this.filterByColorUnVisible('Цвет игрушки: желтый', 'yellow-dispaly-none');
+      this.filterByColorUnVisible('Цвет игрушки: желтый', 'yellow-display-none');
     } else {
-      this.filterByColorVisible('Цвет игрушки: желтый', 'yellow-dispaly-none');
+      this.filterByColorVisible('Цвет игрушки: желтый', 'yellow-display-none');
     }
-
-    console.log(`filter for red - ${this.red}`);
     if (!this.red) {
-      this.filterByColorUnVisible('Цвет игрушки: красный', 'red-dispaly-none');
+      this.filterByColorUnVisible('Цвет игрушки: красный', 'red-display-none');
     } else {
-      this.filterByColorVisible('Цвет игрушки: красный', 'red-dispaly-none');
+      this.filterByColorVisible('Цвет игрушки: красный', 'red-display-none');
     }
-
-    console.log(`filter for blue - ${this.blue}`);
     if (!this.blue) {
-      this.filterByColorUnVisible('Цвет игрушки: синий', 'blue-dispaly-none');
+      this.filterByColorUnVisible('Цвет игрушки: синий', 'blue-display-none');
     } else {
-      this.filterByColorVisible('Цвет игрушки: синий', 'blue-dispaly-none');
+      this.filterByColorVisible('Цвет игрушки: синий', 'blue-display-none');
     }
-
-    console.log(`filter for green - ${this.green}`);
     if (!this.green) {
-      this.filterByColorUnVisible('Цвет игрушки: зелёный', 'green-dispaly-none');
+      this.filterByColorUnVisible('Цвет игрушки: зелёный', 'green-display-none');
     } else {
-      this.filterByColorVisible('Цвет игрушки: зелёный', 'green-dispaly-none');
+      this.filterByColorVisible('Цвет игрушки: зелёный', 'green-display-none');
     }
-
-    console.log(`filter for large - ${this.large}`);
     if (!this.large) {
-      this.filterBySizeVisible('Размер игрушки: большой', 'large-dispaly-none');
+      this.filterBySizeVisible('Размер игрушки: большой', 'large-display-none');
     } else {
-      this.filterBySizeUnVisible('Размер игрушки: большой', 'large-dispaly-none');
+      this.filterBySizeUnVisible('Размер игрушки: большой', 'large-display-none');
     }
-
-    console.log(`filter for middle - ${this.middle}`);
     if (!this.middle) {
-      this.filterBySizeVisible('Размер игрушки: средний', 'middle-dispaly-none');
+      this.filterBySizeVisible('Размер игрушки: средний', 'middle-display-none');
     } else {
-      this.filterBySizeUnVisible('Размер игрушки: средний', 'middle-dispaly-none');
+      this.filterBySizeUnVisible('Размер игрушки: средний', 'middle-display-none');
     }
-
-    console.log(`filter for little - ${this.little}`);
     if (!this.little) {
-      this.filterBySizeVisible('Размер игрушки: малый', 'little-dispaly-none');
+      this.filterBySizeVisible('Размер игрушки: малый', 'little-display-none');
     } else {
-      this.filterBySizeUnVisible('Размер игрушки: малый', 'little-dispaly-none');
+      this.filterBySizeUnVisible('Размер игрушки: малый', 'little-display-none');
     }
-
-    console.log(`filter for favorite - ${this.favorite}`);
     if (!this.favorite) {
-      this.filterByFavoriteUnVisible('Любимая: false', 'favorite-dispaly-none');
+      this.filterByFavoriteUnVisible('Любимая: false', 'favorite-display-none');
     } else {
-      this.filterByFavoriteVisible('Любимая: false', 'favorite-dispaly-none');
+      this.filterByFavoriteVisible('Любимая: false', 'favorite-display-none');
     }
 
   };
@@ -253,10 +248,43 @@ class Sorting {
       }
     });
   }
+  filterByInputText(identity: string, type: string, text: string) {
+    const nameToyName = [...document.getElementsByClassName(`${identity}`)] as HTMLElement[];
+    if (text !== '') {
+      nameToyName.forEach((element: any) => {
+        if ((element.innerText).indexOf(text) === -1) {
+          element.parentElement.parentElement.classList.add(`${type}`);
+        } else {
+          element.parentElement.parentElement.classList.remove(`${type}`);
+        }
+      });
+    }
+    else {
+      nameToyName.forEach((element: any) => {
+        element.parentElement.parentElement.classList.remove(`${type}`);
+      });
+    }
+  }
 
+  filterByYearRange(identity: string, low:number, hi:number) {
+    const yearToy = [...document.getElementsByClassName(`${identity}`)]as HTMLElement[];
+    yearToy.forEach((element: any| string): void => {
+      // if()
+    console.log(low, hi, element.innerText, element.innerText.slice(element.innerText.lastIndexOf(' ')));
+
+      });
+    };
 
 
   addListener() {
+
+    const setOfSlider = new Slider(`set0fslider`, 0, 12);
+    setOfSlider.anySliderEvent();
+    const yearSlider = new Slider(`yearslider`, 1940, 2020);
+    yearSlider.anySliderEvent();
+
+    const search: HTMLInputElement = document.querySelector('.search-toys')!;
+
     const selectElement: HTMLElement = document.querySelector('#sort_set_select')!;
     const bellElement: HTMLElement = document.querySelector('.bell-wrap')!;
     const ballElement: HTMLElement = document.querySelector('.ball-wrap')!;
@@ -270,149 +298,183 @@ class Sorting {
     const blue: HTMLElement = document.querySelector('.blue')!;
     const green: HTMLElement = document.querySelector('.green')!;
 
-    const large: any = document.querySelector('.large-set__square')!;
-    const middle: any = document.querySelector('.middle-set__square')!;
-    const little: any = document.querySelector('.little-set__square')!;
+    const large: HTMLInputElement = document.querySelector('.large-set__square')!;
+    const middle: HTMLInputElement = document.querySelector('.middle-set__square')!;
+    const little: HTMLInputElement = document.querySelector('.little-set__square')!;
 
-    const favorite: any = document.querySelector('.favorite-square')!;
+    const favorite: HTMLInputElement = document.querySelector('.favorite-square')!;
+
+    const yearSetMin: HTMLElement = document.querySelector('.year-set-min')!;
+    const yearSetMax: HTMLElement = document.querySelector('.year-set-max')!;
+    const setOfMin: HTMLElement = document.querySelector('.set0f-set-min')!;
+    const setOfMax: HTMLElement = document.querySelector('.set0f-set-max')!;
+
+    let observer = new MutationObserver(mutationRecords => {
+      // console.log(mutationRecords );
+      this.yearSetMin = +yearSetMin.innerText;
+      this.yearSetMax = +yearSetMax.innerText;
+      this.filterByYearRange('yearToy__year-static',this.yearSetMin,this.yearSetMax);
+      this.setOfMin = +setOfMin.innerText;
+      this.setOfMax = +setOfMax.innerText;
+
+      // console.log(this.yearSetMin); // console.log(изменения)
+      // console.log(this.yearSetMax); // console.log(изменения)
+      // console.log(this.setOfMin); // console.log(изменения)
+      // console.log(this.setOfMax); // console.log(изменения)
+    });
+    observer.observe(yearSetMin, {
+      childList: true, // наблюдать за непосредственными детьми
+    });
+    observer.observe(yearSetMax, {
+      childList: true, // наблюдать за непосредственными детьми
+    });
+    observer.observe(setOfMin, {
+      childList: true, // наблюдать за непосредственными детьми
+    });
+    observer.observe(setOfMax, {
+      childList: true, // наблюдать за непосредственными детьми
+    });
 
 
+    //filtering part
 
-    //filtering part 
+    search.addEventListener('input', (event: any) => {
+      this.text = event.target.value;
+      this.filterByInputText('nameToy__name', 'value-display-none', this.text);
+    });
+
     bellElement.addEventListener('click', (event: Event) => {
-      console.log(this.bellShaped);
       if (this.bellShaped) {
         this.bellShaped = false;
-        this.filterByShapeUnVisible('Форма игрушки: колокольчик', 'bellShaped-dispaly-none');
+        this.filterByShapeUnVisible('Форма игрушки: колокольчик', 'bellShaped-display-none');
       } else {
         this.bellShaped = true;
-        this.filterByShapeVisible('Форма игрушки: колокольчик', 'bellShaped-dispaly-none');
+        this.filterByShapeVisible('Форма игрушки: колокольчик', 'bellShaped-display-none');
       }
     });
 
     ballElement.addEventListener('click', (event: Event) => {
       if (this.ballShaped) {
         this.ballShaped = false;
-        this.filterByShapeUnVisible('Форма игрушки: шар', 'ballShaped-dispaly-none');
+        this.filterByShapeUnVisible('Форма игрушки: шар', 'ballShaped-display-none');
       } else {
         this.ballShaped = true;
-        this.filterByShapeVisible('Форма игрушки: шар', 'ballShaped-dispaly-none');
+        this.filterByShapeVisible('Форма игрушки: шар', 'ballShaped-display-none');
       }
     });
     coneElement.addEventListener('click', (event: Event) => {
       if (this.coneShaped) {
         this.coneShaped = false;
-        this.filterByShapeUnVisible('Форма игрушки: шишка', 'coneShaped-dispaly-none');
+        this.filterByShapeUnVisible('Форма игрушки: шишка', 'coneShaped-display-none');
       } else {
         this.coneShaped = true;
-        this.filterByShapeVisible('Форма игрушки: шишка', 'coneShaped-dispaly-none');
+        this.filterByShapeVisible('Форма игрушки: шишка', 'coneShaped-display-none');
       }
     });
     snowElement.addEventListener('click', (event: Event) => {
       if (this.snowShaped) {
         this.snowShaped = false;
-        this.filterByShapeUnVisible('Форма игрушки: снежинка', 'snowShaped-dispaly-none');
+        this.filterByShapeUnVisible('Форма игрушки: снежинка', 'snowShaped-display-none');
       } else {
         this.snowShaped = true;
-        this.filterByShapeVisible('Форма игрушки: снежинка', 'snowShaped-dispaly-none');
+        this.filterByShapeVisible('Форма игрушки: снежинка', 'snowShaped-display-none');
       }
     });
     figurineElement.addEventListener('click', (event: Event) => {
       if (this.figurineShaped) {
         this.figurineShaped = false;
-        this.filterByShapeUnVisible('Форма игрушки: фигурка', 'figurineShaped-dispaly-none');
+        this.filterByShapeUnVisible('Форма игрушки: фигурка', 'figurineShaped-display-none');
       } else {
         this.figurineShaped = true;
-        this.filterByShapeVisible('Форма игрушки: фигурка', 'figurineShaped-dispaly-none');
+        this.filterByShapeVisible('Форма игрушки: фигурка', 'figurineShaped-display-none');
       }
     });
     white.addEventListener('click', (event: Event) => {
       if (this.white) {
         this.white = false;
-        this.filterByColorUnVisible('Цвет игрушки: белый', 'white-dispaly-none');
+        this.filterByColorUnVisible('Цвет игрушки: белый', 'white-display-none');
       } else {
         this.white = true;
-        this.filterByColorVisible('Цвет игрушки: белый', 'white-dispaly-none');
+        this.filterByColorVisible('Цвет игрушки: белый', 'white-display-none');
       }
     });
 
     yellow.addEventListener('click', (event: Event) => {
       if (this.yellow) {
         this.yellow = false;
-        this.filterByColorUnVisible('Цвет игрушки: желтый', 'yellow-dispaly-none');
+        this.filterByColorUnVisible('Цвет игрушки: желтый', 'yellow-display-none');
       } else {
         this.yellow = true;
-        this.filterByColorVisible('Цвет игрушки: желтый', 'yellow-dispaly-none');
+        this.filterByColorVisible('Цвет игрушки: желтый', 'yellow-display-none');
       }
     });
 
     red.addEventListener('click', (event: Event) => {
       if (this.red) {
         this.red = false;
-        this.filterByColorUnVisible('Цвет игрушки: красный', 'red-dispaly-none');
+        this.filterByColorUnVisible('Цвет игрушки: красный', 'red-display-none');
       } else {
         this.red = true;
-        this.filterByColorVisible('Цвет игрушки: красный', 'red-dispaly-none');
+        this.filterByColorVisible('Цвет игрушки: красный', 'red-display-none');
       }
     });
 
     blue.addEventListener('click', (event: Event) => {
       if (this.blue) {
         this.blue = false;
-        this.filterByColorUnVisible('Цвет игрушки: синий', 'blue-dispaly-none');
+        this.filterByColorUnVisible('Цвет игрушки: синий', 'blue-display-none');
       } else {
         this.blue = true;
-        this.filterByColorVisible('Цвет игрушки: синий', 'blue-dispaly-none');
+        this.filterByColorVisible('Цвет игрушки: синий', 'blue-display-none');
       }
     });
 
     green.addEventListener('click', (event: Event) => {
       if (this.green) {
         this.green = false;
-        this.filterByColorUnVisible('Цвет игрушки: зелёный', 'green-dispaly-none');
+        this.filterByColorUnVisible('Цвет игрушки: зелёный', 'green-display-none');
       } else {
         this.green = true;
-        this.filterByColorVisible('Цвет игрушки: зелёный', 'green-dispaly-none');
+        this.filterByColorVisible('Цвет игрушки: зелёный', 'green-display-none');
       }
     });
 
     large.addEventListener('click', (event: Event) => {
       if (large.checked || this.large) {
         this.large = false;
-        this.filterBySizeVisible('Размер игрушки: большой', 'large-dispaly-none');
+        this.filterBySizeVisible('Размер игрушки: большой', 'large-display-none');
       } else {
         this.large = true;
-        this.filterBySizeUnVisible('Размер игрушки: большой', 'large-dispaly-none');
+        this.filterBySizeUnVisible('Размер игрушки: большой', 'large-display-none');
       }
     });
 
     middle.addEventListener('click', (event: Event) => {
       if (middle.checked || this.middle) {
         this.middle = false;
-        this.filterBySizeVisible('Размер игрушки: средний', 'middle-dispaly-none');
+        this.filterBySizeVisible('Размер игрушки: средний', 'middle-display-none');
       } else {
         this.middle = true;
-        this.filterBySizeUnVisible('Размер игрушки: средний', 'middle-dispaly-none');
+        this.filterBySizeUnVisible('Размер игрушки: средний', 'middle-display-none');
       }
     });
     little.addEventListener('click', (event: Event) => {
       if (little.checked || this.little) {
         this.little = false;
-        this.filterBySizeVisible('Размер игрушки: малый', 'little-dispaly-none');
+        this.filterBySizeVisible('Размер игрушки: малый', 'little-display-none');
       } else {
         this.little = true;
-        this.filterBySizeUnVisible('Размер игрушки: малый', 'little-dispaly-none');
+        this.filterBySizeUnVisible('Размер игрушки: малый', 'little-display-none');
       }
     });
 
     favorite.addEventListener('click', (event: Event) => {
       if (favorite.checked || this.favorite) {
         this.favorite = false;
-        // this.filterByFavoriteVisible('Любимая: true');
-        this.filterByFavoriteUnVisible('Любимая: false', 'favorite-dispaly-none');
+        this.filterByFavoriteUnVisible('Любимая: false', 'favorite-display-none');
       } else {
         this.favorite = true;
-        this.filterByFavoriteVisible('Любимая: false', 'favorite-dispaly-none');
+        this.filterByFavoriteVisible('Любимая: false', 'favorite-display-none');
       }
     });
 
@@ -423,12 +485,14 @@ class Sorting {
         const app = new Cards(this.data);
         app.renderToys();
         this.checkingFilter();
+        this.filterByInputText('nameToy__name', 'value-display-none', this.text);
       }
       if (event.target.value === 'Z_A') {
         this.sortingZ_A();
         const app = new Cards(this.data);
         app.renderToys();
         this.checkingFilter();
+        this.filterByInputText('nameToy__name', 'value-display-none', this.text);
       }
 
       if (event.target.value === 'countUp') {
@@ -436,6 +500,7 @@ class Sorting {
         const app = new Cards(this.data);
         app.renderToys();
         this.checkingFilter();
+        this.filterByInputText('nameToy__name', 'value-display-none', this.text);
       }
 
       if (event.target.value === 'countDown') {
@@ -443,6 +508,7 @@ class Sorting {
         const app = new Cards(this.data);
         app.renderToys();
         this.checkingFilter();
+        this.filterByInputText('nameToy__name', 'value-display-none', this.text);
       }
     });
   }
@@ -450,4 +516,9 @@ class Sorting {
 
 const sorting = new Sorting(data);
 sorting.addListener();
-  // sortingData(data);
+
+// const setOfSlider = new Slider(`set0fslider`, 0, 12);
+// setOfSlider.anySliderEvent();
+// const yearSlider = new Slider(`yearslider`, 1940, 2020);
+// yearSlider.anySliderEvent();
+
