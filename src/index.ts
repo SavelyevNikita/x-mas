@@ -1,4 +1,4 @@
-import { Cards } from './components/cards';
+import { Cards } from './components/Cards';
 import './null.scss';
 import './global.scss';
 import data from './data.js'

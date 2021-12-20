@@ -1,6 +1,6 @@
 import { interCard, Card } from './components/card';
 import data from './data.js';
-import { Cards } from './components/cards';
+import { Cards } from './components/Cards';
 import { Slider } from './components/slider';
 
 

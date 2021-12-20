@@ -1,8 +1,5 @@
 import noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
-// import { Sorting } from '../sorting';
-
-
 
 export class Slider {
     set0fslider: string;
