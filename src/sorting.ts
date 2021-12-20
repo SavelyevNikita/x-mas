@@ -266,14 +266,17 @@ export class Sorting {
     }
   }
 
-  filterByYearRange(identity: string, low:number, hi:number) {
-    const yearToy = [...document.getElementsByClassName(`${identity}`)]as HTMLElement[];
-    yearToy.forEach((element: any| string): void => {
-      // if()
-    console.log(low, hi, element.innerText, element.innerText.slice(element.innerText.lastIndexOf(' ')));
-
-      });
-    };
+  filterByRange(identity: string, low: number, high: number, type: string) {
+    const yearToy = [...document.getElementsByClassName(`${identity}`)] as HTMLElement[];
+    yearToy.forEach((element: any | string): void => {
+      if (+element.innerText.slice(element.innerText.lastIndexOf(' ')) >= low && +element.innerText.slice(element.innerText.lastIndexOf(' ')) <= high) {
+        element.parentElement.parentElement.classList.remove(`${type}`);
+      }
+      else {
+        element.parentElement.parentElement.classList.add(`${type}`);
+      }
+    });
+  };
 
 
   addListener() {
@@ -310,17 +313,12 @@ export class Sorting {
     const setOfMax: HTMLElement = document.querySelector('.set0f-set-max')!;
 
     let observer = new MutationObserver(mutationRecords => {
-      // console.log(mutationRecords );
       this.yearSetMin = +yearSetMin.innerText;
       this.yearSetMax = +yearSetMax.innerText;
-      this.filterByYearRange('yearToy__year-static',this.yearSetMin,this.yearSetMax);
       this.setOfMin = +setOfMin.innerText;
       this.setOfMax = +setOfMax.innerText;
-
-      // console.log(this.yearSetMin); // console.log(изменения)
-      // console.log(this.yearSetMax); // console.log(изменения)
-      // console.log(this.setOfMin); // console.log(изменения)
-      // console.log(this.setOfMax); // console.log(изменения)
+      this.filterByRange('yearToy__year-static', this.yearSetMin, this.yearSetMax, 'year-display-none');
+      this.filterByRange('countToy__count-static', this.setOfMin, this.setOfMax, 'quantity-display-none');
     });
     observer.observe(yearSetMin, {
       childList: true, // наблюдать за непосредственными детьми
@@ -486,6 +484,8 @@ export class Sorting {
         app.renderToys();
         this.checkingFilter();
         this.filterByInputText('nameToy__name', 'value-display-none', this.text);
+        this.filterByRange('yearToy__year-static', this.yearSetMin, this.yearSetMax, 'year-display-none');
+        this.filterByRange('countToy__count-static', this.setOfMin, this.setOfMax, 'quantity-display-none');
       }
       if (event.target.value === 'Z_A') {
         this.sortingZ_A();
@@ -493,6 +493,8 @@ export class Sorting {
         app.renderToys();
         this.checkingFilter();
         this.filterByInputText('nameToy__name', 'value-display-none', this.text);
+        this.filterByRange('yearToy__year-static', this.yearSetMin, this.yearSetMax, 'year-display-none');
+        this.filterByRange('countToy__count-static', this.setOfMin, this.setOfMax, 'quantity-display-none');
       }
 
       if (event.target.value === 'countUp') {
@@ -501,6 +503,8 @@ export class Sorting {
         app.renderToys();
         this.checkingFilter();
         this.filterByInputText('nameToy__name', 'value-display-none', this.text);
+        this.filterByRange('yearToy__year-static', this.yearSetMin, this.yearSetMax, 'year-display-none');
+        this.filterByRange('countToy__count-static', this.setOfMin, this.setOfMax, 'quantity-display-none');
       }
 
       if (event.target.value === 'countDown') {
@@ -509,6 +513,8 @@ export class Sorting {
         app.renderToys();
         this.checkingFilter();
         this.filterByInputText('nameToy__name', 'value-display-none', this.text);
+        this.filterByRange('yearToy__year-static', this.yearSetMin, this.yearSetMax, 'year-display-none');
+        this.filterByRange('countToy__count-static', this.setOfMin, this.setOfMax, 'quantity-display-none');
       }
     });
   }
@@ -516,9 +522,3 @@ export class Sorting {
 
 const sorting = new Sorting(data);
 sorting.addListener();
-
-// const setOfSlider = new Slider(`set0fslider`, 0, 12);
-// setOfSlider.anySliderEvent();
-// const yearSlider = new Slider(`yearslider`, 1940, 2020);
-// yearSlider.anySliderEvent();
-
