@@ -1,6 +1,3 @@
-// import '../null.scss';
-// import './card.scss';
-
 export interface interCard {
     color: string;
     count: string;
