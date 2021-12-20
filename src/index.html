@@ -8,6 +8,9 @@
     </head>
     <body>
         <header>
+            <section>
+                <div class="choosen"></div>
+            </section>
         </header>
         <main>
             <section class="collection-settings">
@@ -25,7 +28,7 @@
                            Сортировать
                        </p>
                        <div class="sort-set">
-                           <select name="sort-set-select" id="sort_set_select">
+                           <select name="sort-set-select" class="sort-set-select" id="sort_set_select">
                                <option value="none" id="none">Выбрать...</option>
                                <option value="A_Z" id="A_Z">По названию от "А" до "Я"</option>
                                <option value="Z_A" id="Z_A">По названию от "Я" до "А"</option>
@@ -123,12 +126,12 @@
                                     <span class="large-set__static-checkbox"></span>
                                     Большой
                                 </label>
-                                <label>
+                                <label class="middle-set__static">
                                     <input type="checkbox" name="middle-set_square" class="middle-set__square" checked>
                                     <span class="middle-set__static-checkbox"></span> 
                                     Средний
                                 </label>
-                                <label>
+                                <label class="little-set__static">
                                     <input type="checkbox" name="little-set_square" class="little-set__square" checked>
                                     <span class="little-set__static-checkbox"></span>
                                     Маленький
@@ -138,7 +141,7 @@
                     <div class="favorite-wrap">
                         <label class="favorite-static">
                             <input type="checkbox" name="favorite_square" class="favorite-square">
-                            <span class="favorite-square-checkbox"></span>
+                            <span class="favorite-square-checkbox"> </span>
                             Только любимые
                         </label>
                     </div>
@@ -161,27 +164,21 @@
             </div>
             <div class="countToy">
                 <span class="countToy__count-static">Количество</span>
-                <!-- <span class="countToy__count"></span> -->
             </div>
             <div class="yearToy">
                 <span class="yearToy__year-static">Год покупки:</span>
-                <!-- <span class="yearToy__year"></span> -->
             </div>
             <div class="shapeToy">                
                 <span class="shapeToy__shape-static">Форма игрушки:</span>
-                <!-- <span class="shapeToy__shape"></span> -->
             </div>    
             <div class="colorToy">                
                 <span class="colorToy__color-static">Цвет игрушки:</span>
-                <!-- <span class="colorToy__color"></span> -->
             </div>
             <div class="sizeToy">                
                 <span class="sizeToy__size-static">Размер игрушки:</span>
-                <!-- <span class="sizeToy__size"></span> -->
             </div>
             <div class="favoriteToy">                
                 <span class="favoriteToy__favorite-static">Любимая:</span>
-                <!-- <span class="favoriteToy__favorite"></span> -->
             </div>
         </div>
         <footer>
