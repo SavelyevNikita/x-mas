@@ -5,6 +5,9 @@ export class Slider {
     set0fslider: string;
     minRange: number;
     maxRange: number;
+    anySlider:any;
+    leftanySlider!: HTMLElement;
+    rightanySlider!: HTMLElement;
     constructor(set0fslider: string, minRange: number, maxRange: number) {
         this.set0fslider = set0fslider;
         this.minRange = minRange;
@@ -12,10 +15,10 @@ export class Slider {
     }
 
     anySliderEvent() {
-        const anySlider = document.getElementById(`${this.set0fslider}`) as any;
-        const leftanySlider: HTMLElement = document.getElementById(`${this.set0fslider}-snap-value-lower`)!;
-        const rightanySlider: HTMLElement = document.getElementById(`${this.set0fslider}-snap-value-upper`)!;
-        noUiSlider.create(anySlider, {
+        this.anySlider = document.getElementById(`${this.set0fslider}`);
+        this.leftanySlider = document.getElementById(`${this.set0fslider}-snap-value-lower`)!;
+        this.rightanySlider = document.getElementById(`${this.set0fslider}-snap-value-upper`)!;
+        noUiSlider.create(this.anySlider, {
             start: [this.minRange, this.maxRange],
             connect: true,
             range: {
@@ -23,16 +26,18 @@ export class Slider {
                 'max': this.maxRange,
             }
         });
-        anySlider.noUiSlider.on('update', () => {
-
-            let outputValue = anySlider.noUiSlider.get() as string[];
+    }
+    anySliderUpdateRange() {
+        this.anySlider.noUiSlider.on('update', () => {
+            let outputValue = this.anySlider.noUiSlider.get() as string[];
             if (outputValue) {
-                leftanySlider.innerHTML = parseInt(outputValue[0]).toString();
-                rightanySlider.innerHTML = parseInt(outputValue[1]).toString();
+                this.leftanySlider.innerHTML = parseInt(outputValue[0]).toString();
+                this.rightanySlider.innerHTML = parseInt(outputValue[1]).toString();
             }
-
-            // return (anySlider.noUiSlider.get());
         });
+    }
+    anySliderSet([minRange, maxRange]:number[]){
+        this.anySlider.noUiSlider.set([minRange, maxRange]);
     }
 };
 
