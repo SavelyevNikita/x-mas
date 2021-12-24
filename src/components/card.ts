@@ -10,6 +10,7 @@ export interface interCard {
 }
 
 export class Card {
+// export class Card extends HTMLElement {
     color: string;
     count: string;
     favorite: boolean;
@@ -21,6 +22,7 @@ export class Card {
     year: string;
 
     constructor(data: interCard) {
+        // super();
         this.color = data.color;
         this.count = data.count;
         this.favorite = data.favorite;
@@ -141,6 +143,5 @@ export class Card {
         }
         this.renderToy();
     };
-
 }
 
