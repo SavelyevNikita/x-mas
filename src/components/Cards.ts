@@ -20,5 +20,9 @@ export class Cards {
             collection_new_year.appendChild(toy.renderToy());
         });
     }
+    destroy(){
+        const collection_new_year: HTMLElement = document.querySelector('.collection-new-year')!;
+
+    }
 }
 

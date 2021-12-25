@@ -97,27 +97,21 @@ export class Card {
 
         countToy_count_static.innerText = `Количество: ${this.count}`;
         countToy.appendChild(countToy_count_static);
-        // countToy.appendChild(countToy_count);
 
         yearToy_year_static.innerText = `Год покупки: ${this.year}`;
         yearToy.appendChild(yearToy_year_static);
-        // yearToy.appendChild(yearToy_year);
 
         shapeToy_shape_static.innerText = `Форма игрушки: ${this.shape}`;
         shapeToy.appendChild(shapeToy_shape_static);
-        // shapeToy.appendChild(shapeToy_shape);
 
         colorToy_color_static.innerText = `Цвет игрушки: ${this.color}`;
         colorToy.appendChild(colorToy_color_static);
-        // colorToy.appendChild(colorToy_color);
 
         sizeToy_size_static.innerText = `Размер игрушки: ${this.size}`;
         sizeToy.appendChild(sizeToy_size_static);
-        // sizeToy.appendChild(sizeToy_size);
 
         favoriteToy_favorite_static.innerText = `Любимая: ${this.favorite}`;
         favoriteToy.appendChild(favoriteToy_favorite_static);
-        // favoriteToy.appendChild(favoriteToy_favorite);
 
         toyCard.appendChild(nameToy);
         toyCard.appendChild(countToy);
@@ -128,7 +122,6 @@ export class Card {
         toyCard.appendChild(favoriteToy);
         toyCard.addEventListener('click', () => {
             this.ischoosen();
-            // console.log(this.name);
             if (this.theСhosen) toyCard.classList.add(`Сhosen`);
             else toyCard.classList.remove(`Сhosen`);
 
@@ -143,5 +136,7 @@ export class Card {
         }
         this.renderToy();
     };
+    destroy(){        
+    }
 }
 
