@@ -1,3 +1,4 @@
+import { ToyPage } from './components/toyPage';
 import { Cards } from './components/Cards';
 import { EffectsAndSeachWrap } from './components/effectsAndSeachWrap';
 import { SortWrap } from './components/sortWrap';
@@ -10,38 +11,42 @@ import { FavoriteWrap } from './components/favoriteWrap';
 import { ResetWrap } from './components/resetWrap';
 import { Sorting } from './components/sorting';
 import './null.scss';
-import './global.scss';
+import './toy.scss';
+import './tree.scss';
 import data from './data.js'
 
-    const appEffectsAndSeachWrap = new EffectsAndSeachWrap('.effects-and-seach-wrap');
-    appEffectsAndSeachWrap.render();
+// const toyPage = new ToyPage('main');
+// toyPage.render();
 
-    const sortWrap = new SortWrap('.sort-wrap');
-    sortWrap.render();
+// const appEffectsAndSeachWrap = new EffectsAndSeachWrap('.effects-and-seach-wrap');
+// appEffectsAndSeachWrap.render();
 
-    const formWrap = new FormWrap('.form-wrap');
-    formWrap.render();
+// const sortWrap = new SortWrap('.sort-wrap');
+// sortWrap.render();
 
-    const setOfWrap = new SetOfWrap('.set0f-wrap');
-    setOfWrap.render();
+// const formWrap = new FormWrap('.form-wrap');
+// formWrap.render();
 
-    const yearOfWrap = new YearWrap('.year-wrap');
-    yearOfWrap.render();
+// const setOfWrap = new SetOfWrap('.set0f-wrap');
+// setOfWrap.render();
 
-    const сolorWrap = new СolorWrap('.color-wrap');
-    сolorWrap.render();
+// const yearOfWrap = new YearWrap('.year-wrap');
+// yearOfWrap.render();
 
-    const sizeWrap = new SizeWrap('.size-wrap');
-    sizeWrap.render();
+// const сolorWrap = new СolorWrap('.color-wrap');
+// сolorWrap.render();
 
-    const favoriteWrap = new FavoriteWrap('.favorite-wrap');
-    favoriteWrap.render();
+// const sizeWrap = new SizeWrap('.size-wrap');
+// sizeWrap.render();
 
-    const resetWrap = new ResetWrap('.reset-wrap');
-    resetWrap.render();
+// const favoriteWrap = new FavoriteWrap('.favorite-wrap');
+// favoriteWrap.render();
 
-    const sorting = new Sorting(data);
-    sorting.addListener();
+// const resetWrap = new ResetWrap('.reset-wrap');
+// resetWrap.render();
 
-    const appCards = new Cards(data);
-    appCards.renderToys();
+// const sorting = new Sorting(data);
+// sorting.addListener();
+
+// const appCards = new Cards(data);
+// appCards.renderToys();
