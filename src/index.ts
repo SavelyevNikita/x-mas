@@ -10,6 +10,8 @@ import { SizeWrap } from './components/toys/sizeWrap';
 import { FavoriteWrap } from './components/toys/favoriteWrap';
 import { ResetWrap } from './components/toys/resetWrap';
 import { Sorting } from './components/toys/sorting';
+import { TreeMainView } from './components/tree/treeMainView';
+import { TreeSetting } from './components/tree/treeSetting';
 import './null.scss';
 import './toy.scss';
 import './global.scss';
@@ -51,3 +53,9 @@ import data from './data.js'
 
 // const appCards = new Cards(data);
 // appCards.renderToys();
+
+const treeMainView=new TreeMainView('.tree-main-view');
+treeMainView.render();
+
+const treeSetting =new TreeSetting('.tree-setting');
+treeSetting.render();
