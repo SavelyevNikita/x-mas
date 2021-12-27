@@ -1,5 +1,5 @@
 import { interCard, Card } from './card';
-import data from '../data.js';
+import data from '../../data';
 import { Cards } from './Cards';
 import { Slider } from './slider';
 

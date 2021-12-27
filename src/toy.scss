@@ -13,10 +13,6 @@ body {
     flex-direction: column;
     background: #192F2D;
 }
-header{
-    // border: tomato 1px solid;
-    height: 50px;
-}
 
 %text-shared {
     height: 22px;
@@ -408,34 +404,6 @@ main {
         display: flex;
         flex-wrap: wrap;
     }
-}
-
-footer {
-    margin: 0 auto;
-    margin-top: auto;
-    width: 1920px;
-    // border: rebeccapurple 1px solid;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    .rss-logo {
-        background: url("./assets/svg/rs_school_logo.svg");
-        width: 220px;
-        height: 82px;
-    }
-    .year {
-        color: #fff;
-    }
-}
-
-.developer a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.ExptoyCard {
-    display: none;
 }
 
 .year-display-none,

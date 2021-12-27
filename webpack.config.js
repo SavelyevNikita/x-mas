@@ -7,7 +7,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const baseConfig = {
     entry: [path.resolve(__dirname, './src/index.ts'),
     // path.resolve(__dirname, './src/components/slder.ts'),
-    path.resolve(__dirname, './src/components/myInnerForHeader.ts'),
+    path.resolve(__dirname, './src/components/toys/myInnerForHeader.ts'),
     // path.resolve(__dirname, './src/sorting.ts'),
 ],
     mode: 'development',

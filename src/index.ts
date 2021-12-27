@@ -1,17 +1,18 @@
-import { ToyPage } from './components/toyPage';
-import { Cards } from './components/Cards';
-import { EffectsAndSeachWrap } from './components/effectsAndSeachWrap';
-import { SortWrap } from './components/sortWrap';
-import { FormWrap } from './components/formWrap';
-import { SetOfWrap } from './components/set0fWrap';
-import { YearWrap } from './components/yearWrap';
-import { СolorWrap } from './components/colorWrap';
-import { SizeWrap } from './components/sizeWrap';
-import { FavoriteWrap } from './components/favoriteWrap';
-import { ResetWrap } from './components/resetWrap';
-import { Sorting } from './components/sorting';
+import { ToyPage } from './components/toys/toyPage';
+import { Cards } from './components/toys/Cards';
+import { EffectsAndSeachWrap } from './components/toys/effectsAndSeachWrap';
+import { SortWrap } from './components/toys/sortWrap';
+import { FormWrap } from './components/toys/formWrap';
+import { SetOfWrap } from './components/toys/set0fWrap';
+import { YearWrap } from './components/toys/yearWrap';
+import { СolorWrap } from './components/toys/colorWrap';
+import { SizeWrap } from './components/toys/sizeWrap';
+import { FavoriteWrap } from './components/toys/favoriteWrap';
+import { ResetWrap } from './components/toys/resetWrap';
+import { Sorting } from './components/toys/sorting';
 import './null.scss';
 import './toy.scss';
+import './global.scss';
 import './tree.scss';
 import data from './data.js'
 
