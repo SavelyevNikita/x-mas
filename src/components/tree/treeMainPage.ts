@@ -1,3 +1,7 @@
+import { TreeMainView } from './treeMainView';
+import { TreeSetting } from './treeSetting';
+import { TreeSettingsToys } from './treeSettingsToys';
+
 export class TreeMainPage {
   node!: HTMLElement;
   treeSetting!: HTMLElement;
@@ -21,8 +25,19 @@ export class TreeMainPage {
     this.node.appendChild(treeSetting);
     this.node.appendChild(treeMainView);
     this.node.appendChild(treeSettingsToys);
+    this.renderInnerTreePage();
   }
   destroy() {
-    this.node.innerHTML='';
-     }
+    this.node.innerHTML = '';
+  }
+  renderInnerTreePage(){
+    const treeMainView = new TreeMainView('.tree-main-view');
+    treeMainView.render('./assets/tree/1.png');
+
+    const treeSetting = new TreeSetting('.tree-setting');
+    treeSetting.render();
+
+    const treeSettingsToys = new TreeSettingsToys('.tree-settings-toys');
+    treeSettingsToys.render();
+  }
 }

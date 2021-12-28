@@ -1,17 +1,17 @@
 export class TreeMainView {
   node!: HTMLElement;
 
-  tree!: HTMLDivElement;
+  tree!: HTMLImageElement;
 
   constructor(str: string) {
     this.node = document.querySelector(str)!;
   }
-  render(): void {
-    const tree = document.createElement('div');
+  render(src:string): void {
+    const tree = document.createElement('img');
     tree.setAttribute('class', 'tree');
+    tree.setAttribute('src', src);
 
     this.node.appendChild(tree);
-
   }
   destroy() {
   }

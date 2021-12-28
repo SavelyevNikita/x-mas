@@ -1,3 +1,7 @@
+import data from '../../data';
+import { interCard } from '../toys/card';
+
+
 export class TreeSettingsToys {
   node!: HTMLElement;
   wrapperTreeSettingsToys!: HTMLDivElement;
@@ -24,23 +28,6 @@ export class TreeSettingsToys {
 
     const toysCollectionWrap = document.createElement('div');
     toysCollectionWrap.setAttribute('class', 'toys-collection-wrap');
-
-    const favoriteToy = document.createElement('div');
-    favoriteToy.setAttribute('class', 'favorite-toy');
-
-    const img_1 = document.createElement('img');
-    img_1.setAttribute('class', 'ft');
-    img_1.setAttribute('src', './assets/toys/1.png');
-    img_1.setAttribute('alt', 'toys/1.png');
-
-    const span_1 = document.createElement('span');
-    span_1.setAttribute('class', 'count');
-    span_1.textContent = '12';
-
-    favoriteToy.appendChild(img_1);
-    favoriteToy.appendChild(span_1);
-
-    toysCollectionWrap.appendChild(favoriteToy);
 
     toysCollection.appendChild(toysCollectionStatic);
     toysCollection.appendChild(toysCollectionWrap);
@@ -73,7 +60,34 @@ export class TreeSettingsToys {
     wrapperTreeSettingsToys.appendChild(savedCollection);
 
     this.node.appendChild(wrapperTreeSettingsToys);
+    this.renderFavoriteToys(data);
+    this.renderFavoriteToys(data);
   }
   destroy() {
+  }
+  renderFavoriteToys(data: interCard[]) {
+    // const toysCollection: interCard[] = [];
+    const toysCollectionWrap = document.querySelector('.toys-collection-wrap')!;
+    console.log(toysCollectionWrap);
+    data.forEach(el => {
+      if (el.favorite) {        
+        const favoriteToy = document.createElement('div');
+        favoriteToy.setAttribute('class', 'favorite-toy');
+
+        const img = document.createElement('img');
+        img.setAttribute('class', 'ft');
+        img.setAttribute('src', `./assets/toys/${el.num}.png`);
+        img.setAttribute('alt', `toys/${el.num}.png`);
+
+        const span = document.createElement('span');
+        span.setAttribute('class', 'count');
+        span.textContent = `${el.count}`;
+
+        favoriteToy.appendChild(img);
+        favoriteToy.appendChild(span);
+
+        toysCollectionWrap.appendChild(favoriteToy);
+      }
+    });
   }
 }

@@ -1,3 +1,16 @@
+import { Cards } from './Cards';
+import { EffectsAndSeachWrap } from './effectsAndSeachWrap';
+import { SortWrap } from './sortWrap';
+import { FormWrap } from './formWrap';
+import { SetOfWrap } from './set0fWrap';
+import { YearWrap } from './yearWrap';
+import { СolorWrap } from './colorWrap';
+import { SizeWrap } from './sizeWrap';
+import { FavoriteWrap } from './favoriteWrap';
+import { ResetWrap } from './resetWrap';
+import { Sorting } from './sorting';
+import data from '../../data'
+
 export class ToyPage {
   node!: HTMLElement;
 
@@ -69,9 +82,44 @@ export class ToyPage {
 
     this.node.appendChild(collectionSettings);
     this.node.appendChild(collectionNewYear);
+    this.renderInnerToyPage();
 
   }
   destroy() {
     this.node.innerHTML='';
+  }
+  renderInnerToyPage(){
+    const appEffectsAndSeachWrap = new EffectsAndSeachWrap('.effects-and-seach-wrap');
+    appEffectsAndSeachWrap.render();
+
+    const sortWrap = new SortWrap('.sort-wrap');
+    sortWrap.render();
+
+    const formWrap = new FormWrap('.form-wrap');
+    formWrap.render();
+
+    const setOfWrap = new SetOfWrap('.set0f-wrap');
+    setOfWrap.render();
+
+    const yearOfWrap = new YearWrap('.year-wrap');
+    yearOfWrap.render();
+
+    const сolorWrap = new СolorWrap('.color-wrap');
+    сolorWrap.render();
+
+    const sizeWrap = new SizeWrap('.size-wrap');
+    sizeWrap.render();
+
+    const favoriteWrap = new FavoriteWrap('.favorite-wrap');
+    favoriteWrap.render();
+
+    const resetWrap = new ResetWrap('.reset-wrap');
+    resetWrap.render();
+
+    const sorting = new Sorting(data);
+    sorting.addListener();
+
+    const appCards = new Cards(data);
+    appCards.renderToys();
   }
 }

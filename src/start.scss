@@ -58,21 +58,23 @@ main {
         justify-content: center;
         align-items: center;
         .interface-wrapper{
-                width: 593px;
-                height: 249px;
-                background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(36, 197, 219, 0.15) 0%, rgba(36, 197, 219, 0) 100%);
-                backdrop-filter: blur(31px);
-                border-radius: 30px;
-                border: solid #24C5DB 1px;
-                display: flex;
+            cursor: pointer;
+            width: 593px;
+            height: 249px;
+            background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(36, 197, 219, 0.15) 0%, rgba(36, 197, 219, 0) 100%);
+            backdrop-filter: blur(31px);
+            border-radius: 30px;
+            border: solid #24C5DB 1px;
+            display: flex;
             justify-content: center;
             align-items: center;
+            margin-bottom: 50px;
             .greating {
-                
                 @extend %text-shared;
             }
         }
         .start-wrapper{
+            cursor: pointer;
             width: 320px;
             height: 54px;
             background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(36, 197, 219, 0.15) 0%, rgba(36, 197, 219, 0) 100%);
