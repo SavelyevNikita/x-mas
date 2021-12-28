@@ -72,5 +72,6 @@ export class ToyPage {
 
   }
   destroy() {
+    this.node.innerHTML='';
   }
 }

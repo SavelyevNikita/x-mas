@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'Neucha';
+    src: url('./assets/fonts/Neucha-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$col:rgb(255,
+0,
+0);
+body {
+    display: flex;
+    flex-direction: column;
+    background: #192F2D;
+}
+
+%text-shared {
+    height: 22px;
+    font-family: 'Neucha';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+%secondary-text-shared {
+    font-family: Steppe;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+%text-large-middle-little {
+    font-family: Steppe;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+main {
+    .start-background{
+        background: url("./assets/backg.jpg") 0 0/100% 100% no-repeat;
+        // width: 1920px;
+        // height: 100%;
+        min-width: 100%;
+        min-height: calc(100vh - 140px);
+        background-attachment: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .interface-wrapper{
+                width: 593px;
+                height: 249px;
+                background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(36, 197, 219, 0.15) 0%, rgba(36, 197, 219, 0) 100%);
+                backdrop-filter: blur(31px);
+                border-radius: 30px;
+                border: solid #24C5DB 1px;
+                display: flex;
+            justify-content: center;
+            align-items: center;
+            .greating {
+                
+                @extend %text-shared;
+            }
+        }
+        .start-wrapper{
+            width: 320px;
+            height: 54px;
+            background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(36, 197, 219, 0.15) 0%, rgba(36, 197, 219, 0) 100%);
+            backdrop-filter: blur(31px);
+            border-radius: 30px;
+            border: solid #24C5DB 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .start{
+                @extend %text-shared;
+            }
+        }
+    }
+
+}

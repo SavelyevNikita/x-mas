@@ -1,4 +1,4 @@
-import '../null.scss';
+// import '../null.scss';
 import './card.scss';
 import { interCard, Card } from './card';
 

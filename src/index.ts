@@ -12,50 +12,73 @@ import { ResetWrap } from './components/toys/resetWrap';
 import { Sorting } from './components/toys/sorting';
 import { TreeMainView } from './components/tree/treeMainView';
 import { TreeSetting } from './components/tree/treeSetting';
+import { TreeSettingsToys } from './components/tree/treeSettingsToys';
+import { TreeMainPage } from './components/tree/treeMainPage';
 import './null.scss';
 import './toy.scss';
 import './global.scss';
 import './tree.scss';
+import './start.scss';
 import data from './data.js'
 
-// const toyPage = new ToyPage('main');
-// toyPage.render();
+const toyPage = new ToyPage('main');
+const treeMainPage = new TreeMainPage('main');
 
-// const appEffectsAndSeachWrap = new EffectsAndSeachWrap('.effects-and-seach-wrap');
-// appEffectsAndSeachWrap.render();
+const toysButton = document.querySelector('.toys');
+toysButton?.addEventListener('click', () => {
+    treeMainPage.destroy();
 
-// const sortWrap = new SortWrap('.sort-wrap');
-// sortWrap.render();
+    const toyPage = new ToyPage('main');
+    toyPage.render();
 
-// const formWrap = new FormWrap('.form-wrap');
-// formWrap.render();
+    const appEffectsAndSeachWrap = new EffectsAndSeachWrap('.effects-and-seach-wrap');
+    appEffectsAndSeachWrap.render();
 
-// const setOfWrap = new SetOfWrap('.set0f-wrap');
-// setOfWrap.render();
+    const sortWrap = new SortWrap('.sort-wrap');
+    sortWrap.render();
 
-// const yearOfWrap = new YearWrap('.year-wrap');
-// yearOfWrap.render();
+    const formWrap = new FormWrap('.form-wrap');
+    formWrap.render();
 
-// const сolorWrap = new СolorWrap('.color-wrap');
-// сolorWrap.render();
+    const setOfWrap = new SetOfWrap('.set0f-wrap');
+    setOfWrap.render();
 
-// const sizeWrap = new SizeWrap('.size-wrap');
-// sizeWrap.render();
+    const yearOfWrap = new YearWrap('.year-wrap');
+    yearOfWrap.render();
 
-// const favoriteWrap = new FavoriteWrap('.favorite-wrap');
-// favoriteWrap.render();
+    const сolorWrap = new СolorWrap('.color-wrap');
+    сolorWrap.render();
 
-// const resetWrap = new ResetWrap('.reset-wrap');
-// resetWrap.render();
+    const sizeWrap = new SizeWrap('.size-wrap');
+    sizeWrap.render();
 
-// const sorting = new Sorting(data);
-// sorting.addListener();
+    const favoriteWrap = new FavoriteWrap('.favorite-wrap');
+    favoriteWrap.render();
 
-// const appCards = new Cards(data);
-// appCards.renderToys();
+    const resetWrap = new ResetWrap('.reset-wrap');
+    resetWrap.render();
 
-const treeMainView=new TreeMainView('.tree-main-view');
-treeMainView.render();
+    const sorting = new Sorting(data);
+    sorting.addListener();
 
-const treeSetting =new TreeSetting('.tree-setting');
-treeSetting.render();
+    const appCards = new Cards(data);
+    appCards.renderToys();
+});
+
+const treeMakeUpButton = document.querySelector('.tree-make-up');
+treeMakeUpButton?.addEventListener('click', () => {
+    toyPage.destroy();
+
+    const treeMainPage = new TreeMainPage('main');
+    treeMainPage.render();
+
+    const treeMainView = new TreeMainView('.tree-main-view');
+    treeMainView.render();
+
+    const treeSetting = new TreeSetting('.tree-setting');
+    treeSetting.render();
+
+    const treeSettingsToys = new TreeSettingsToys('.tree-settings-toys');
+    treeSettingsToys.render();
+
+});
