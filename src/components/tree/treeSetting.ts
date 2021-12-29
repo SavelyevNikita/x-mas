@@ -67,7 +67,7 @@ export class TreeSetting {
 
     const chooseSettingsToys = document.createElement('div');
     chooseSettingsToys.setAttribute('class', 'choose-settings-toys');
-    
+
     const sound = document.createElement('div');
     sound.setAttribute('class', 'sound');
 
@@ -82,7 +82,7 @@ export class TreeSetting {
 
     const chooseTreeStatic = document.createElement('p');
     chooseTreeStatic.setAttribute('class', 'choose-tree-static');
-    chooseTreeStatic.textContent='Выберите елку';
+    chooseTreeStatic.textContent = 'Выберите елку';
 
     const chooseTree = document.createElement('div');
     chooseTree.setAttribute('class', 'choose-tree');
@@ -144,7 +144,7 @@ export class TreeSetting {
 
     const chooseBackgroundStatic = document.createElement('p');
     chooseBackgroundStatic.setAttribute('class', 'choose-background-static');
-    chooseBackgroundStatic.textContent='Выберите фон';
+    chooseBackgroundStatic.textContent = 'Выберите фон';
 
     const chooseBackground = document.createElement('div');
     chooseBackground.setAttribute('class', 'choose-background');
@@ -222,7 +222,7 @@ export class TreeSetting {
 
     const chooseFlashLightsStatic = document.createElement('p');
     chooseFlashLightsStatic.setAttribute('class', 'choose-flash-lights-static');
-    chooseFlashLightsStatic.textContent='Выберите гирлянду';
+    chooseFlashLightsStatic.textContent = 'Выберите гирлянду';
 
     const chooseFlashLights = document.createElement('div');
     chooseFlashLights.setAttribute('class', 'choose-flash-lights');
@@ -243,28 +243,28 @@ export class TreeSetting {
     chooseFlashLightsWrap.appendChild(chooseFlashLightsStatic);
     chooseFlashLightsWrap.appendChild(chooseFlashLights);
 
-    const treeSettingButton=document.createElement('div');
+    const treeSettingButton = document.createElement('div');
     treeSettingButton.setAttribute('class', 'tree-setting-button');
 
-    const settingButtonWrap=document.createElement('div');
+    const settingButtonWrap = document.createElement('div');
     settingButtonWrap.setAttribute('class', 'setting-button-wrap');
 
-    const saveWrap=document.createElement('div');
+    const saveWrap = document.createElement('div');
     saveWrap.setAttribute('class', 'save-wrap');
 
-    const input_1=document.createElement('input');
-    input_1.setAttribute('type','button');
-    input_1.setAttribute('value','Сохранить');
+    const input_1 = document.createElement('input');
+    input_1.setAttribute('type', 'button');
+    input_1.setAttribute('value', 'Сохранить');
 
     saveWrap.appendChild(input_1);
 
-    const resetSettingsWrap=document.createElement('div');
+    const resetSettingsWrap = document.createElement('div');
     resetSettingsWrap.setAttribute('class', 'reset-settings-wrap');
 
-    const input_2=document.createElement('input');
-    input_2.setAttribute('type','button');
-    input_2.setAttribute('value','Сбросить настройки');
-  
+    const input_2 = document.createElement('input');
+    input_2.setAttribute('type', 'button');
+    input_2.setAttribute('value', 'Сбросить настройки');
+
     resetSettingsWrap.appendChild(input_2);
 
     settingButtonWrap.appendChild(saveWrap);
@@ -280,5 +280,37 @@ export class TreeSetting {
     this.node.appendChild(wrapperTreeSetting);
   }
   destroy() {
+    this.node.innerHTML = '';
+  }
+  setTree() {
+    const tree_1 = document.querySelector('.tree-1') as HTMLElement;
+    const tree_2 = document.querySelector('.tree-2')as HTMLElement;
+    const tree_3 = document.querySelector('.tree-3')as HTMLElement;
+    const tree_4 = document.querySelector('.tree-4')as HTMLElement;
+    const tree_5 = document.querySelector('.tree-5')as HTMLElement;
+    const tree_6 = document.querySelector('.tree-6')as HTMLElement;
+    tree_1.onclick = function () {
+      console.log(tree_1);
+    }
+
+    tree_2.onclick = function () {
+      console.log(tree_2);
+    }
+
+    tree_3.onclick = function () {
+      console.log(tree_3);
+    }
+
+    tree_4.onclick = function () {
+      console.log(tree_4);
+    }
+
+    tree_5.onclick = function () {
+      console.log(tree_5);
+    }
+
+    tree_6.onclick = function () {
+      console.log(tree_6);
+    }
   }
 }

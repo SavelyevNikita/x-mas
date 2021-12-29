@@ -32,10 +32,11 @@ export class TreeMainPage {
   }
   renderInnerTreePage(){
     const treeMainView = new TreeMainView('.tree-main-view');
-    treeMainView.render('./assets/tree/1.png');
+    treeMainView.render('./assets/tree/2.png');
 
     const treeSetting = new TreeSetting('.tree-setting');
     treeSetting.render();
+    treeSetting.setTree();
 
     const treeSettingsToys = new TreeSettingsToys('.tree-settings-toys');
     treeSettingsToys.render();

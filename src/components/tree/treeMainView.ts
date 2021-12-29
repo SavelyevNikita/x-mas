@@ -14,5 +14,6 @@ export class TreeMainView {
     this.node.appendChild(tree);
   }
   destroy() {
+    this.node.innerHTML='';
   }
 }
